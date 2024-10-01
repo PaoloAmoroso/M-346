@@ -1,0 +1,77 @@
+<PropertyList>
+    
+    <path>Cockpit.ac</path>
+    
+	<!-- Pilot models -->
+	
+	<model>
+        <name>Pilot</name>
+		<path>Aircraft/M-346/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m>-2.38</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.20</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+	
+	<model>
+        <name>Co-pilot</name>
+		<path>Aircraft/M-346/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m>-0.98</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.55</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+     <animation>
+       <type>select</type>
+          <object-name>Co-pilot</object-name>
+          <condition>
+          <property>sim/model/hide-copilot</property>
+          </condition>
+     </animation>
+	
+    <!-- Seats -->	
+    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Interior/Seat/Seat.xml</path>
+        <offsets>
+            <x-m>-2.40009</x-m>
+            <y-m> 0</y-m>
+            <z-m> 0.254636</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Interior/Seat/Seat.xml</path>
+        <offsets>
+            <x-m>-1.0097</x-m>
+            <y-m> 0</y-m>
+            <z-m> 0.58567</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <!-- Interior -->	
+    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Interior.xml</path>
+    </model>
+	
+    <!-- Student instruments -->	
+
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Front-Instruments.xml</path>
+    </model>
+
+    <!-- Instructor instruments -->
+
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Back-Instruments.xml</path>
+    </model>
+
+</PropertyList>
