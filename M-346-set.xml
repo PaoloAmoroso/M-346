@@ -1,0 +1,1167 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+    
+		<!-- Info -->
+    
+		<description>Leonardo M-346 Master</description>
+		<author>Paolo Amoroso, pjedvaj, StuartC and Tomaskom</author>
+		<status>1.0.2</status>
+		<flight-model>yasim</flight-model>
+		<aero>M-346-yasim</aero>
+
+		<tags>
+			<tag>Leonardo</tag>
+                <tag>aermacchi</tag>
+			<tag>mid-wing</tag>
+			<tag>tricycle</tag>
+			<tag>retractable-gear</tag>
+			<tag>twin-engine</tag>
+			<tag>trainer</tag>
+                <tag>fighter</tag>
+			<tag>ifr</tag>
+			<tag>jet</tag>
+			<tag>1990s</tag>
+			<tag>2000s</tag>
+			<tag>2010s</tag>
+                <tag>2020s</tag>
+		</tags>
+
+           <status>Early-Production</status>
+           <rating>
+               <FDM type="int">     3 </FDM>
+               <systems type="int"> 2 </systems>
+               <cockpit type="int"> 3 </cockpit>
+               <model type="int">   5 </model>
+           </rating>
+           <previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-1.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-2.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-3.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-4.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-5.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-6.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-7.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-8.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-9.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-10.png</path>
+			</preview>
+                <preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-11.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-12.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-13.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-14.png</path>
+			</preview>
+                <preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-15.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-16.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-17.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-18.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-19.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-20.png</path>
+			</preview>
+                <preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-21.png</path>
+			</preview>
+		</previews>
+    
+		<!-- System settings -->
+    
+		<startup>
+			<splash-texture>Aircraft/M-346/Splash.png</splash-texture>
+		</startup>
+	
+		<model>
+			<path>Aircraft/M-346/Models/M-346.xml</path>
+			<hide-tanks type="int">0</hide-tanks>
+			<hide-lights type="int">1</hide-lights>	
+		</model>
+
+		<submodels>
+		     <serviceable type="bool">true</serviceable>
+		     <path>Aircraft/M-346/Submodels.xml</path>
+		</submodels>
+	
+		<sound>
+                <audible>true</audible>
+			<path>Aircraft/M-346/Sounds/Sound.xml</path>
+		</sound>
+    
+		<systems>
+			<electrical>
+				<path>Aircraft/Generic/generic-electrical.xml</path>
+			</electrical>
+			<autopilot>
+				<path>Aircraft/M-346/Systems/Autopilot.xml</path>
+			</autopilot>
+		</systems>
+	
+		<fuel-fraction>1.0</fuel-fraction>
+    
+		<flaps>
+			<setting> 0.00 </setting>
+			<setting> 0.25 </setting>
+			<setting> 0.50 </setting>
+			<setting> 0.75 </setting>
+			<setting> 1.00 </setting>
+		</flaps>
+    
+		<!-- Head Up Display -->
+    
+		<hud>
+			<path n="1">Aircraft/M-346/Systems/Hud.xml</path>
+			<visibility n="1">true</visibility>
+			<palette>
+				<color n="0">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">0.38</red>
+					<green type="float">1.0</green>
+					<blue type="float">0.22</blue>
+				</color>
+				<color n="1">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">1.0</red>
+					<green type="float">0.2</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
+        
+			<clipping>
+				<left type="double">-65</left>
+				<right type="double">65</right>
+				<top type="double">-25</top>
+				<bottom type="double">-170</bottom>
+			</clipping> 
+		</hud>
+    
+		<!-- View settings -->
+    
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+	
+		<chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
+	
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">0.00</x-offset-m>
+				<y-offset-m archive="y">0.68</y-offset-m>
+				<z-offset-m archive="y">-2.35</z-offset-m>
+				<pitch-offset-deg>-12</pitch-offset-deg>
+				<default-field-of-view-deg>80</default-field-of-view-deg>
+			</config>
+		</view>
+    
+		<view n="100">
+			<name>Copilot/Instructor view</name>
+			<internal archive="y">true</internal>
+			<type>lookfrom</type>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.00</x-offset-m>
+				<y-offset-m archive="y">0.95</y-offset-m>
+				<z-offset-m archive="y">-1.10</z-offset-m> 
+				<pitch-offset-deg>-8</pitch-offset-deg>
+				<default-field-of-view-deg>90</default-field-of-view-deg>
+				<limits>
+					<left>
+						<heading-max-deg>-100</heading-max-deg>
+						<x-offset-threshold-deg>0</x-offset-threshold-deg>
+						<x-offset-max-m>0</x-offset-max-m>
+					</left>
+					<right>
+						<heading-max-deg>100</heading-max-deg>
+						<x-offset-threshold-deg>0</x-offset-threshold-deg>
+						<x-offset-max-m>0</x-offset-max-m>
+					</right>
+					<enabled>1</enabled>
+				</limits>
+			</config>
+		</view>
+
+		<view n="101">
+			<name>Pilot cam</name>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.00</x-offset-m>
+				<y-offset-m archive="y">0.62</y-offset-m>
+				<z-offset-m archive="y">-2.9</z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+				<default-field-of-view-deg>95</default-field-of-view-deg>
+			</config>
+		</view>
+	
+	
+		<view n="102">
+			<name>Over the shoulder</name>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.37</x-offset-m>
+				<y-offset-m archive="y">0.75</y-offset-m>
+				<z-offset-m archive="y">-1.9</z-offset-m>
+				<pitch-offset-deg>-3</pitch-offset-deg>
+				<heading-offset-deg>7</heading-offset-deg>
+				<default-field-of-view-deg>65</default-field-of-view-deg>
+			</config>
+		</view>
+    
+		<!-- Menu -->
+    
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>M-346</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+                           <item>
+                                <label>Show/hide Copilot</label>
+                                <binding>
+                                     <command>property-toggle</command>
+                                     <property>sim/model/hide-copilot</property>
+                                </binding>
+                           </item>
+                           <item>
+                                <label>Lights</label>
+                                <binding>
+                                     <command>nasal</command>
+                                     <script>m346.lights_dialog1.toggle()</script>
+                                </binding>
+                           </item>
+                           <item>
+        <label>--- M-346 Configuration ---</label>
+        <enabled>false</enabled>
+                           </item>
+                           <item>
+                                <label>Show/hide Probe</label>
+                                <binding>
+                                     <command>property-toggle</command>
+                                     <property>sim/model/hide-Probe</property>
+                                </binding>
+                           </item>
+                           <item>
+                                <label>M-346FA Configuration</label>
+                                <binding>
+                                     <command>property-toggle</command>
+                                     <property>sim/model/hide-FA</property>
+                                </binding>
+                           </item>
+                           <item>
+        <label>--- M-346 Weapons ---</label>
+        <enabled>false</enabled>
+                           </item>
+                           <item>
+        <label>Weapons Racks</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/hide-Racks</property>
+        </binding>
+                           </item>
+                           <item>
+        <label>Reload Weapons</label>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal1</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal2</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal3</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal4</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal5</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal6</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal7</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal8</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal9</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal10</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal11</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal12</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>
+          if (!getprop("gear/gear[0]/wow")) {
+            screen.log.write("This is only possible on ground.");
+            return;
+          }
+          if (getprop("gear/gear[0]/position-norm")) {
+            screen.log.write("Weapons Reloaded.");
+          }
+          </script>
+        </binding>
+        </item>
+					<!-- <item>
+						<label>Reload Cannon</label>
+						<binding>
+							<command>nasal</command>
+							<script>cannon.reload()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Reload Rockets</label>
+						<binding>
+							<command>nasal</command>
+							<script>rockets.reload()</script>
+						</binding>
+					</item> -->
+					<item>
+						<label>Toggle ammo reports</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/controls/armament/report-ammo</property>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+    
+		<!-- Help -->
+	  	
+		<help>
+			<title>Leonardo M-346 Master</title>
+			<key>
+				<name>}</name>
+				<desc>Start up/Shut down engines</desc>
+			</key>
+			<key>
+				<name>c</name>
+				<desc>Toggle canopy</desc>
+			</key>
+			<key>
+				<name>e</name>
+				<desc>Fire Cannon Pod</desc>
+			</key>
+			<key>
+				<name>q</name>
+				<desc>Flares Launch</desc>
+			</key>
+                <key>
+				<name>u | i</name>
+				<desc>AIM-9M Launch</desc>
+			</key>
+                <key>
+				<name>n/N | M/n</name>
+				<desc>MK. 82 Launch</desc>
+			</key>
+                <key>
+				<name>j | k</name>
+				<desc>GBU-12 Launch</desc>
+			</key>
+                <key>
+                     <name>Q</name>
+                     <desc>Reset View</desc>
+                </key>
+        
+			<line>Parking brake is on</line>
+		</help>
+    
+		<!-- Multiplayer -->
+    
+		<multiplay>
+			<chat_display>1</chat_display>
+			<generic> 
+				<int n="0" alias="/sim/crashed" />
+				<!-- Beacon on -->
+				<int n="1" alias="/controls/lighting/beacon-switch" />
+				<!-- Strobe on -->
+				<int n="2" alias="/controls/lighting/strobe-switch" />
+				<!-- Landing light on -->
+				<int n="3" alias="/controls/lighting/landing-lights-switch" />
+				<!-- Nav lights on -->
+				<int n="4" alias="/controls/lighting/nav-lights-switch" />
+				<!-- Engine status -->
+				<int n="5" alias="/engines/engine[0]/state" />
+				<int n="6" alias="/engines/engine[1]/state" />
+				<int n="7" alias="/sim/crashed" />
+				<int n="8" alias="/controls/armament/trigger-GSh-23" />
+                      <int n="9" alias="/smoke/active"/>
+                      <int n="10" alias="/smoke/colors"/>
+				<float n="0" alias="/surface-positions/left-taileron-pos-norm"/>
+				<float n="1" alias="/surface-positions/right-taileron-pos-norm"/>
+				<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+				<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+				<float n="4" alias="/surface-positions/speedbrake-pos-norm"/>
+				<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat left engine -->
+				<float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat right engine -->
+                      <!-- For Bombable -->
+                      <int n="10" type="int" alias="controls/armament/trigger">0</int>
+			</generic>
+		</multiplay>
+    
+		<mp-systems>
+			<combat-enabled type="bool">true</combat-enabled>
+		</mp-systems>
+	
+		<!-- Payload -->
+    
+		<weight n="0">
+			<name>Pylon 1 Right</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>AIM-9M</name>
+				<lbs>21</lbs>
+			</opt>
+		</weight>	
+    
+		<weight n="1">
+			<name>Pylon 2 Right</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+                <opt>
+				<name>MK-82</name>
+				<lbs>531</lbs>
+			</opt>
+                <!-- <opt>
+				<name>BL-13 rockets</name>
+				<lbs>600</lbs>
+			</opt> -->
+		</weight>	
+    
+		<weight n="2">
+			<name>Pylon 3 Right</name>
+			<tank>3</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+                <opt>
+				<name>MK-82</name>
+				<lbs>531</lbs>
+			</opt>
+                <opt>
+				<name>GBU-12</name>
+				<lbs>510</lbs>
+			</opt>
+			<opt>
+				<name>Tank</name>
+				<lbs>600</lbs>
+				<gals>170</gals>
+			</opt>
+		</weight>	
+    
+		<weight n="3">
+			<name>Centerline</name>
+			<tank>4</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+                <opt>
+				<name>Tank</name>
+				<lbs>600</lbs>
+				<gals>170</gals>
+			</opt>
+                <opt>
+				<name>Litening Targeting Pod</name>
+				<lbs>455</lbs>
+			</opt>
+                <opt>
+				<name>Sniper Targeting Pod</name>
+				<lbs>445</lbs>
+			</opt>
+			<opt>
+				<name>Cannon</name>
+				<lbs>100</lbs>
+			</opt>
+		</weight>	
+    
+		<weight n="4">
+			<name>Pylon 3 Left</name>
+			<tank>5</tank>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+                <opt>
+				<name>MK-82</name>
+				<lbs>531</lbs>
+			</opt>
+                <opt>
+				<name>GBU-12</name>
+				<lbs>510</lbs>
+			</opt>
+			<opt>
+				<name>Tank</name>
+				<lbs>600</lbs>
+				<gals>170</gals>
+			</opt>
+		</weight>
+    
+		<weight n="5">
+			<name>Pylon 2 Left</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+                <opt>
+				<name>MK-82</name>
+				<lbs>531</lbs>
+			</opt>
+			<!-- <opt>
+				<name>BL-13 rockets</name>
+				<lbs>600</lbs>
+			</opt> -->
+		</weight>
+    
+		<weight n="6">
+			<name>Pylon 1 Left</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>AIM-9M</name>
+				<lbs>21</lbs>
+			</opt>
+		</weight>
+	
+	</sim>
+
+	<controls>
+		
+		<gear>
+			<brake-parking type="double">1.0</brake-parking>
+		</gear>
+		
+		<armament>
+			<trigger>0</trigger>
+			<trigger1>0</trigger1>
+			<trigger2>0</trigger2>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			<station n="7">
+				<release type="bool">false</release>
+			</station>
+			<station n="8">
+				<release type="bool">false</release>
+			</station>
+		</armament>
+		
+	</controls>
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<tank-num type="int">0</tank-num>
+				<level-gal_us archive="y">216.176</level-gal_us>
+			</tank>
+			<tank n="1">
+				<tank-num type="int">1</tank-num>
+				<level-gal_us archive="y">216.176</level-gal_us>
+			</tank>
+			<tank n="2">
+				<tank-num type="int">2</tank-num>
+				<level-gal_us archive="y">216.176</level-gal_us>
+			</tank>
+			<tank n="3">
+				<name>Right-DropTank</name>
+				<selected type="bool">false</selected>
+			</tank>
+			<tank n="4">
+				<name>Centre-DropTank</name>
+				<selected type="bool">false</selected>
+			</tank>
+			<tank n="5">
+				<name>Left-DropTank</name>
+				<selected type="bool">false</selected>
+			</tank>
+		</fuel>
+	</consumables>
+
+    
+	<!-- Keyboard shortcuts -->
+    
+	<input>
+		<keyboard>
+  
+			<key n="125">
+				<name>}</name>
+				<desc>Engine autostart</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						#M-346.engines.engine1.autostart();
+						#settimer( func { M-346.engines.engine2.autostart(); }, 12 );
+						yasimengines.autostart();		 
+					</script>
+               
+				</binding>
+			</key>
+
+                <!-- <key n="83">
+                     <name>S</name>
+                     <desc>Open Intake Doors</desc>
+                     <binding>
+                          <command>property-toggle</command>
+     <property>controls/manteinance</property>
+                     </binding>
+                </key> -->
+       
+			<key n="99">
+				<name>c</name>
+				<desc>Toggle canopy</desc>
+				<binding>
+					<command>nasal</command>
+					<script>canopy.canopy_switch(2)</script>
+				</binding>
+			</key>
+
+                <key n="101">
+                     <name>e</name>
+                     <desc>Guns</desc>
+                     <binding>
+                          <command>property-assign</command>
+                          <property>controls/armament/trigger</property>
+                          <value>true</value>
+                          <!-- <condition>
+                            <and>
+                              <property>sim/weight[3]/selected</property>
+			              <value>Cannon</value>
+                           </and>
+                          </condition> -->
+                     </binding>
+                     <mod-up>
+                     <binding>
+                          <command>property-assign</command>
+                          <property>controls/armament/trigger</property>
+                          <value>false</value>
+                          <!-- <condition>
+                            <and>
+                              <property>sim/weight[3]/selected</property>
+			              <value>Cannon</value>
+                           </and>
+                          </condition> -->
+                     </binding>
+                     </mod-up>
+                </key>
+       
+			<!-- <key n="110">
+				<name>n</name>
+				<desc>Retract speedbrake</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/flight/speedbrake</property>
+					<step type="double">-0.2</step>
+					<min type="double">0</min>
+					<max type="double">1</max>
+				</binding>
+			</key> -->
+       
+			<key n="113">
+		          <name>q</name>
+		          <desc>Flare release</desc>
+		          <binding>
+			          <command>property-assign</command>
+			      <property>/flares/released1</property>
+			          <value>1</value>
+		          </binding>
+		          <mod-up>
+			     <binding>
+				     <command>property-assign</command>
+				     <property>/flares/released1</property>
+				<value>0</value>
+			     </binding>
+		          </mod-up>
+	          </key>
+
+               <key n="81">
+      <name>Q</name>
+      <desc>Reset view</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("sim/current-view/field-of-view",      getprop("sim/current-view/config/default-field-of-view-deg"));
+          setprop("sim/current-view/heading-offset-deg", getprop("sim/current-view/config/heading-offset-deg"));
+          setprop("sim/current-view/pitch-offset-deg",   getprop("sim/current-view/config/pitch-offset-deg"));
+          setprop("sim/current-view/roll-offset-deg",    getprop("sim/current-view/config/roll-offset-deg"));
+        </script>
+      </binding>
+    </key>
+
+    <key n="117">
+     <name>u</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal1</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="105">
+      <name>i</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal2</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="110">
+      <name>n</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal3</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="109">
+      <name>m</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal4</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="78">
+      <name>N</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal5</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="77">
+      <name>M</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal6</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="106">
+      <name>j</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal7</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+    <key n="107">
+      <name>k</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal8</property>
+        <value>true</value>
+      </binding>
+    </key>
+
+		</keyboard>
+	</input>
+    
+	<!-- Instrumentation -->
+    
+	<instrumentation>
+        
+		<transponder>
+			<inputs>
+				<serviceable type="bool">true</serviceable>
+			</inputs>
+		</transponder>
+        
+		<nav n="0">
+			<serviceable type="bool">1</serviceable>
+		</nav>
+        
+		<nav n="1">
+			<serviceable type="bool">1</serviceable>
+		</nav>
+        
+		<comm n="0">
+			<serviceable type="bool">1</serviceable>
+		</comm>
+        
+		<comm n="1">
+			<serviceable type="bool">1</serviceable>
+		</comm>
+        
+		<airspeed-indicator>
+			<limit-indicated-speed-kt type="double">280</limit-indicated-speed-kt>	
+			<index n="0" type="double">95</index>
+			<index n="1" type="double">145</index>
+		</airspeed-indicator>
+        
+		<g-meter>
+			<g-max archive="y" type="double">1</g-max>
+			<g-min archive="y" type="double">1</g-min>
+		</g-meter>
+        
+		<radar>
+			<range type="int" archive="y">20</range>
+			<range-factor type="double" archive="n">0.001888</range-factor>
+			<minimized type="bool" archive="y">false</minimized>
+			<selected type="int">3</selected>
+			<enabled type="bool">true</enabled>
+			<az-field type="double">120</az-field>
+			<range type="double">150</range>
+			<range-selected type="double">50</range-selected>
+			<radar2-range type="double">150</radar2-range>
+			<display-rdr type="bool">true</display-rdr>
+			<radar-standby type="int">3</radar-standby>
+			<mode>
+				<rws type="bool">true</rws>
+				<tws-auto type="bool">false</tws-auto>
+			</mode>
+		</radar>
+        
+		<radar2>
+			<sweep-width-m type="double">0.0844</sweep-width-m>
+			<range-width-m type="double">0.0846</range-width-m>
+			<radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+			<hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
+			<hud-radius-m type="double">0.071</hud-radius-m>
+			<hud-vertical-offset-m type="double">-0.025</hud-vertical-offset-m>
+		</radar2>
+        
+		<rwr>
+			<display-lighting-intens type="double">0.4</display-lighting-intens>
+			<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+		</rwr>
+        
+		<terrain-radar>
+			<hi-elev>
+				<alt-ft type="double">-9999.9</alt-ft>
+				<lat-deg type="double">-9999.9</lat-deg>
+				<lon-deg type="double">-9999.9</lon-deg>
+				<dist-m type="double">-9999.9</dist-m>
+				<collision-status type="string">initialised</collision-status>
+			</hi-elev>
+			<settings>
+				<mode type="string">extend</mode>
+				<state type="string">off</state>
+				<range-m type="double">2500</range-m>
+				<step-m type="double">250</step-m>
+				<max-climb-rate-fps type="double">120</max-climb-rate-fps>
+				<hi-elev-markers type="bool">false</hi-elev-markers>
+			</settings>
+		</terrain-radar>
+        
+		<efis>  
+			<ecam>
+				<display-mode type="string">FUEL</display-mode>
+			</ecam>
+			<nd>
+				<display-mode type="string">VOR</display-mode>
+				<display-mode-knob type="int">2</display-mode-knob>
+				<display-range type="int">40</display-range>
+			</nd>
+			<input>
+				<vor-adf-1 type="int">1</vor-adf-1>
+				<vor-adf-2 type="int">1</vor-adf-2>
+				<CSTR type="bool">1</CSTR>
+				<WPT type="bool">1</WPT>
+				<VORD type="bool">1</VORD>
+				<NDB type="bool">1</NDB>
+				<ARPT type="bool">1</ARPT>
+				<WX type="bool">1</WX>
+				<TERR type="bool">1</TERR>
+				<TRAF type="bool">1</TRAF>
+				<taxi type="bool">1</taxi>
+			</input>
+		</efis>
+        
+	</instrumentation>
+    
+	<!-- Effects -->
+    
+	<environment>
+		<turbulence>
+			<use-cloud-turbulence>true</use-cloud-turbulence>
+		</turbulence>
+	</environment>
+	
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
+    
+	<!-- Nasal scripts -->
+
+	<nasal>
+    
+		<M-346>
+			<file>Aircraft/M-346/Nasal/hud.nas</file>
+			<file>Aircraft/M-346/Nasal/liveries.nas</file>
+			<file>Aircraft/M-346/Nasal/refuel.nas</file>
+			<file>Aircraft/M-346/Nasal/explode.nas</file>
+		</M-346>
+           
+           <m346>
+			<file>Aircraft/M-346/Nasal/map.nas</file>
+                <file>Aircraft/M-346/Nasal/dialog.nas</file>
+		</m346>
+    
+		<dmesw>
+			<file>Aircraft/M-346/Nasal/dmesw.nas</file>
+		</dmesw>
+    
+		<terrain-map>        
+			<file>Aircraft/M-346/Nasal/terrain-map.nas</file>        
+		</terrain-map>
+    
+		<lights>
+			<file>Aircraft/M-346/Nasal/light.nas</file>
+		</lights>
+    
+		<eno>
+			<file>Aircraft/M-346/Nasal/eno.nas</file>
+		</eno>
+    
+		<!-- <maintenance>
+			<file>Aircraft/M-346/Nasal/maintenance.nas</file>
+		</maintenance> -->
+    
+		<yasimengines>
+			<file>Aircraft/M-346/Nasal/yasim-engines.nas</file>
+		</yasimengines>
+        
+		<canopy>
+			<file>Aircraft/M-346/Nasal/canopy.nas</file>
+		</canopy>
+    
+		<tyresmoke>
+			<file>Aircraft/M-346/Nasal/tyresmoke.nas</file>
+		</tyresmoke>
+		
+	     <payload>
+			<file>Aircraft/M-346/Nasal/Payload.nas</file>
+		</payload>
+		
+		<guns>
+			<file>Aircraft/M-346/Nasal/weapons.nas</file>
+		</guns>
+		
+		<cannon>
+			<file>Aircraft/M-346/Nasal/cannon.nas</file>
+		</cannon>
+		
+		<rockets>
+			<file>Aircraft/M-346/Nasal/rockets.nas</file>
+		</rockets>
+    
+		<m877>
+			<file>Aircraft/Instruments-3d/clock/m877/M877.nas</file>
+		</m877>
+    
+		<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>
+    
+		<radar>
+			<file>Aircraft/M-346/Nasal/radar.nas</file> 
+		</radar>
+    
+		<radar2>
+			<file>Aircraft/M-346/Nasal/radar2.nas</file>
+		</radar2>
+		
+		<MpEncode>
+			<file>Aircraft/M-346/Nasal/MpEncode.nas</file>
+		</MpEncode>
+    
+		<mode>
+			<file>Aircraft/M-346/Nasal/Mode.nas</file>
+		</mode>
+           <engines>
+                <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+                <file>Aircraft/M-346/Nasal/engines-yasim.nas</file>
+    </engines>
+    
+	</nasal>
+
+</PropertyList>
