@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+      <!-- Sonic Boom Effect -->
+      <model>
+        <path>Effects/Prandtl-Glauert/all-effects.xml</path>
+      </model>
+	
+	 <!-- Impact explosion -->
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Explosion/Explode.xml</path>
+        <condition>
+            <property>disintegration/explosion/explode</property>
+            <!--><property>/nasal/explode</property><-->
+        </condition>
+        <offsets>
+            <x-m>12.0</x-m>
+            <y-m> 0.0</y-m>
+            <z-m> 0.0</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    <!-- Impact fire -->
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Explosion/ImpactFire.xml</path>
+        <condition>
+            <equals>
+                <property>disintegration/explosion/fire</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>12.0</x-m>
+            <y-m> 0.0</y-m>
+            <z-m> 0.0</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    <!-- Impact fire smoke -->
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Explosion/ImpactFireSmoke.xml</path>
+        <condition>
+            <equals>
+                <property>disintegration/explosion/fire</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>12.0</x-m>
+            <y-m> 0.0</y-m>
+            <z-m> 0.0</z-m>
+            <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+    
+    <!-- Contrails and smoke -->
+    
+    <model>
+		<path>Aircraft/M-346/Models/Effects/Vapour/Vapour.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>1.0</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/M-346/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m> 1.0</x-m>
+			<y-m>-2.0</y-m>
+			<z-m> 0.5</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+	
+	<model>
+		<path>Aircraft/M-346/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>2.0</y-m>
+			<z-m>0.5</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+	
+    <!-- Gauche -->
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Trail/TrailL.xml</path>
+        <offsets>
+            <x-m> 8.5</x-m>
+            <y-m>-0.5</y-m>
+            <z-m>-0.3</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Smoke/SmokeL.xml</path>
+        <offsets>
+            <x-m> 3.9</x-m>
+            <y-m>-0.5</y-m>
+            <z-m>-0.3</z-m> 
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Tiptrail/Tiptrail.xml</path>
+        <offsets>
+            <x-m> 3.0</x-m>
+            <y-m>-4.8</y-m>
+            <z-m> 0.7</z-m>
+        </offsets>
+    </model>
+    
+    <!-- Droite -->
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Trail/TrailR.xml</path>
+        <offsets>
+            <x-m> 8.5 </x-m>
+            <y-m> 0.5</y-m>
+            <z-m>-0.3</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Smoke/SmokeR.xml</path>
+        <offsets>
+            <x-m> 3.9 </x-m>
+            <y-m> 0.5</y-m>
+            <z-m>-0.3</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/M-346/Models/Effects/Tiptrail/Tiptrail.xml</path>
+        <offsets>
+            <x-m>3.0</x-m>
+            <y-m>4.8</y-m>
+            <z-m>0.7</z-m>
+        </offsets>
+    </model>
+	
+	<!-- Landing gear effects -->
+	
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+        <name>WheelNose</name>
+        <offsets>
+            <x-m>-2.6262</x-m>
+            <y-m> 0.0000</y-m>
+            <z-m>-1.4806</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+        <name>WheelLeft</name>
+        <offsets>
+            <x-m> 1.4624</x-m>
+            <y-m>-1.0356</y-m>
+            <z-m>-1.4259</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+        <name>WheelRight</name>
+        <offsets>
+            <x-m> 1.4624</x-m>
+            <y-m> 1.0356</y-m>
+            <z-m>-1.4259</z-m>
+        </offsets>
+    </model>
+
+    <!-- Weapons effects -->
+	
+	<model>
+		<name>flame</name>
+		<path>Aircraft/M-346/Models/Effects/Gun/Flame.xml</path>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/payload-int</property>
+					<value>4</value>
+				</equals>
+				<property>sim/multiplay/generic/int[8]</property>
+			</and>
+    	</condition>
+	</model>
+	
+  <!-- cannon smoke -->
+  <model>
+    <path>Aircraft/M-346/Models/Effects/Gun/smoke.xml</path>
+    <name>GSh-23-smoke</name>
+    <offsets>
+      <x-m>-1.3732</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.7919</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>GSh-23-smoke</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/payload-int</property>
+          <value>4</value>
+        </equals>
+        <property>sim/multiplay/generic/int[8]</property>
+      </and>
+    </condition>
+  </animation>
+
+  <!-- MP bullets done by particles -->
+  <model>
+    <path>Aircraft/M-346/Models/Effects/Gun/MP-bullet.xml</path>
+    <name>GSh-23-MPbullets</name>
+    <offsets>
+      <x-m>-1.3732</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.7919</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>GSh-23-MPbullets</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[4]/payload-int</property>
+          <value>4</value>
+        </equals>
+        <property>sim/multiplay/generic/int[8]</property>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>

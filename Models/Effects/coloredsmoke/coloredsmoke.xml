@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+  
+  <model>
+    <path>Red.xml</path>
+    <condition>
+      <and>
+        <!-- /smoke/active -->
+        <property>sim/multiplay/generic/int[9]</property>
+        <equals>
+          <!-- /smoke/colors -->
+          <property>sim/multiplay/generic/int[10]</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </model>
+  
+  <model>
+    <path>White.xml</path>
+    <condition>
+      <and>
+        <!-- /smoke/active -->
+        <property>sim/multiplay/generic/int[9]</property>
+        <equals>
+          <!-- /smoke/colors -->
+          <property>sim/multiplay/generic/int[10]</property>
+          <value>2</value>
+        </equals>
+      </and>
+    </condition>
+  </model>
+  
+  <model>
+    <path>Green.xml</path>
+    <condition>
+      <and>
+        <!-- /smoke/active -->
+        <property>sim/multiplay/generic/int[9]</property>
+        <equals>
+          <!-- /smoke/colors -->
+          <property>sim/multiplay/generic/int[10]</property>
+          <value>3</value>
+        </equals>
+      </and>
+    </condition>
+  </model>
+  
+</PropertyList>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>prandtl-glauert.ac</path>
+
+  <animation>
+    <!-- Objets transparents -->
+    <object-name>Prandtl-Glauert</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Prandtl-Glauert</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>Prandtl-Glauert</object-name>
+  </effect>
+
+  <!-- ******************************************************************* -->
+  <!-- Condensation mach => 0.8 (529 kts) et altitude <= 5000 ft           -->
+  <!-- ******************************************************************* -->
+  <animation>
+    <type>select</type>
+    <object-name>Prandtl-Glauert</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>/velocities/mach</property>
+          <value> 0.8 </value>
+        </greater-than>
+        <less-than>
+          <property>/position/altitude-ft</property>
+          <value> 5000 </value>
+        </less-than>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>
