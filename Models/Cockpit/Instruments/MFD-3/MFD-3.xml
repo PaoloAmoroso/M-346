@@ -1,0 +1,1008 @@
+<PropertyList>
+    
+    <path>MFD-3.ac</path>
+    
+    <!-- Illumination -->
+    
+    <animation>
+        <type>material</type>
+		<object-name>Buttons</object-name>
+		<object-name>too-slow</object-name>
+		<object-name>on-speed</object-name>
+		<object-name>too-fast</object-name>
+		<object-name>REGT.001</object-name>
+		<object-name>REGT.002</object-name>
+		<object-name>REGT.003</object-name>
+		<object-name>LEGT.001</object-name>
+		<object-name>LEGT.002</object-name>
+		<object-name>LEGT.003</object-name>
+		<object-name>RITT.001</object-name>
+		<object-name>RITT.002</object-name>
+		<object-name>RITT.003</object-name>
+		<object-name>LITT.001</object-name>
+		<object-name>LITT.002</object-name>
+		<object-name>LITT.003</object-name>
+		<object-name>LVoltNeedle</object-name>
+		<object-name>RVoltNeedle</object-name>
+		<object-name>LVolt.001</object-name>
+		<object-name>LVolt.002</object-name>
+		<object-name>LVolt.003</object-name>
+		<object-name>RVolt.001</object-name>
+		<object-name>RVolt.002</object-name>
+		<object-name>RVolt.003</object-name>
+		<object-name>Fuel.001</object-name>
+		<object-name>Fuel.002</object-name>
+		<object-name>Fuel.003</object-name>
+		<object-name>Fuel.004</object-name>
+		<object-name>RRPM.001</object-name>
+		<object-name>RRPM.002</object-name>
+		<object-name>RRPM.003</object-name>
+		<object-name>LRPM.001</object-name>
+		<object-name>LRPM.002</object-name>
+		<object-name>LRPM.003</object-name>
+		<object-name>RPML</object-name>
+		<object-name>RPMR</object-name>
+        <object-name>Select1</object-name>
+        <object-name>Select2</object-name>
+        <object-name>Select3</object-name>
+        <object-name>Select4</object-name>
+        <object-name>Select5</object-name>
+        <object-name>Select6</object-name>
+        <object-name>Select7</object-name>
+        <object-name>Select8</object-name>
+        <object-name>Select9</object-name>
+        <object-name>Display</object-name>
+        <emission>
+            <red>0.045</red>
+            <green>0.025</green>
+            <blue>0.015</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+	
+	<!-- Angle of Attack -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>too-slow</object-name>
+		<condition>
+			<greater-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/slow-deg</property>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>on-speed</object-name>
+		<condition>
+			<not>
+				<or>
+					<greater-than>
+						<property>orientation/alpha-deg</property>
+						<property>sim/aoa-indexer/too-slow-deg</property>
+					</greater-than>
+					<less-than>
+						<property>orientation/alpha-deg</property>
+						<property>sim/aoa-indexer/too-fast-deg</property>
+					</less-than>
+				</or>
+			</not>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>too-fast</object-name>
+		<condition>
+			<less-than>
+				<property>orientation/alpha-deg</property>
+				<property>sim/aoa-indexer/fast-deg</property>
+			</less-than>
+		</condition>
+	</animation>
+	
+	<!-- Fuel Quantity -->
+	
+    <animation>
+		<type>textranslate</type>
+		<object-name>Fuel.001</object-name>
+		<property>consumables/fuel/tank/level-lbs</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Fuel.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-lbs</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+    <animation>
+		<type>textranslate</type>
+		<object-name>Fuel.002</object-name>
+		<property>consumables/fuel/tank/level-lbs</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Fuel.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-lbs</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+    <animation>
+		<type>textranslate</type>
+		<object-name>Fuel.003</object-name>
+		<property>consumables/fuel/tank/level-lbs</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Fuel.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-lbs</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>Fuel.004</object-name>
+		<property>consumables/fuel/tank/level-lbs</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Voltage -->
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>LVoltNeedle</object-name>
+		<property>systems/electrical/volts</property>
+		<interpolation>
+			<entry><ind> 0 </ind><dep>   0 </dep></entry>
+			<entry><ind> 20 </ind><dep>  45 </dep></entry>
+			<entry><ind> 25 </ind><dep> 90 </dep></entry>
+			<entry><ind> 30 </ind><dep> 180 </dep></entry>
+			<entry><ind> 45 </ind><dep> 270 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+		<center>
+			<x-m> 0.0017</x-m>
+			<y-m>-0.0499</y-m>
+			<z-m> 0.0522</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RVoltNeedle</object-name>
+		<property>systems/electrical/volts</property>
+		<interpolation>
+			<entry><ind> 0 </ind><dep>   0 </dep></entry>
+			<entry><ind> 20 </ind><dep>  45 </dep></entry>
+			<entry><ind> 25 </ind><dep> 90 </dep></entry>
+			<entry><ind> 30 </ind><dep> 180 </dep></entry>
+			<entry><ind> 45 </ind><dep> 270 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+		<center>
+			<x-m> 0.0017</x-m>
+			<y-m>-0.0249</y-m>
+			<z-m> 0.0522</z-m>
+		</center>
+	</animation>s
+	
+    <animation>
+		<type>textranslate</type>
+		<object-name>RVolt.001</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RVolt.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/volts</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>RVolt.002</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RVolt.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/volts</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>RVolt.003</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	    <animation>
+			<type>textranslate</type>
+			<object-name>LVolt.001</object-name>
+			<property>systems/electrical/volts</property>
+			<factor>0.001</factor>
+			<step>100</step>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+		</animation>
+		
+		<animation>
+			<type>select</type>
+			<object-name>LVolt.001</object-name>
+			<condition>
+				<greater-than-equals>
+					<property>systems/electrical/volts</property>
+					<value>100</value>
+				</greater-than-equals>
+			</condition>
+		</animation>
+    
+	    <animation>
+			<type>textranslate</type>
+			<object-name>LVolt.002</object-name>
+			<property>systems/electrical/volts</property>
+			<factor>0.01</factor>
+			<step>10</step>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+		</animation>
+		
+		<animation>
+			<type>select</type>
+			<object-name>LVolt.002</object-name>
+			<condition>
+				<greater-than-equals>
+					<property>systems/electrical/volts</property>
+					<value>10</value>
+				</greater-than-equals>
+			</condition>
+		</animation>
+    
+	    <animation>
+			<type>textranslate</type>
+			<object-name>LVolt.003</object-name>
+			<property>systems/electrical/volts</property>
+			<factor>1</factor>
+			<step>0.1</step>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+		</animation>
+	
+	<!-- RPM Indicator -->
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RPML</object-name>
+		<property>engines/engine[0]/n1</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>100</ind><dep>305</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> 0.0017</x-m>
+			<y-m>-0.0239</y-m>
+			<z-m>-0.0322</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RPMR</object-name>
+		<property>engines/engine[1]/n1</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>100</ind><dep>305</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> 0.0017</x-m>
+			<y-m> 0.0229</y-m>
+			<z-m>-0.0322</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+    <animation>
+		<type>textranslate</type>
+		<object-name>RRPM.001</object-name>
+		<property>engines/engine[1]/n1</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RRPM.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[1]/n1</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>RRPM.002</object-name>
+		<property>engines/engine[1]/n1</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RRPM.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[1]/n1</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>RRPM.003</object-name>
+		<property>engines/engine[1]/n1</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+    <animation>
+		<type>textranslate</type>
+		<object-name>LRPM.001</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LRPM.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n1</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>LRPM.002</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LRPM.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n1</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>LRPM.003</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- EGT -->
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>REGT.001</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>REGT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/egt-degf</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>REGT.002</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>LEGT.001</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LEGT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/egt-degf</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>LEGT.002</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- ITT -->
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>RITT.001</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RITT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/itt-degc</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>RITT.002</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>RITT.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/itt-degc</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>RITT.003</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>LITT.001</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LITT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/itt-degc</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>LITT.002</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LITT.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/itt-degc</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>LITT.003</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+    <!-- Gear Brake Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>GB</object-name>
+        <condition>
+            <equals>
+                <property>controls/gear/brake-parking</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+    
+    <!-- Speedbrake Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>AB</object-name>
+        <condition>
+            <equals>
+                <property>surface-positions/speedbrake-pos-norm</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+    
+    <!-- Flaps Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>FU</object-name>
+        <condition>
+            <equals>
+                <property>surface-positions/flap-pos-norm</property>
+                <value>false</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <!-- Slats Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>Slat1</object-name>
+		<object-name>Slat2</object-name>
+        <condition>
+            <equals>
+                <property>surface-positions/flap-pos-norm</property>
+                <value>false</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <!-- External Tank Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>TankL</object-name>
+        <condition>
+            <equals>
+                <property>consumables/fuel/tank[3]/selected</property>
+                <value>false</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>TankC</object-name>
+        <condition>
+            <equals>
+                <property>consumables/fuel/tank[4]/selected</property>
+                <value>false</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>TankR</object-name>
+        <condition>
+            <equals>
+                <property>consumables/fuel/tank[5]/selected</property>
+                <value>false</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <!-- Pylon Indicator -->
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select7</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[5]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select5</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[3]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select3</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[1]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
+    <animation> 
+        <type>select</type>
+        <object-name>Select1</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[0]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select9</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[6]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select2</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[0]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select4</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[2]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select6</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[4]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Select8</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/weight[6]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+	
+	<!-- Gear Indicator -->
+	
+    <animation> 
+        <type>select</type>
+        <object-name>GearF</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>GearL</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>GearR</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[2]/position-norm</property>
+				<value>0</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>GearFUp</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+            </equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>GearLUp</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[1]/position-norm</property>
+				<value>1</value>
+			</equals>
+        </condition>
+    </animation>
+	
+    <animation> 
+        <type>select</type>
+        <object-name>GearRUp</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[2]/position-norm</property>
+				<value>1</value>
+			</equals>
+        </condition>
+    </animation>
+	
+	<!-- FOD Indicator -->
+	
+    <animation> 
+        <type>select</type>
+        <object-name>FOD</object-name>
+        <condition>
+            <equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+            </equals>
+        </condition>
+    </animation>
+	
+	<!-- Canopy Indicator -->
+	
+    <animation> 
+        <type>select</type>
+        <object-name>Canopy</object-name>
+        <condition>
+            <equals>
+				<property>/canopy/position-norm</property>
+				<value>1</value>
+            </equals>
+        </condition>
+    </animation>
+	
+</PropertyList>

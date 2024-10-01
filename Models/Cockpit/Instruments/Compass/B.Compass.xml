@@ -1,0 +1,26 @@
+<PropertyList>
+    
+    <path>B.Compass.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>Ring</object-name>
+        <emission>
+            <red>0.045</red>
+            <green>0.025</green>
+            <blue>0.015</blue>
+        </emission> 
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>Ring</object-name>
+        <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+    
+</PropertyList>
