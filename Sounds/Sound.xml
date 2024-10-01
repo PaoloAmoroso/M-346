@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <fx>
+
+    <!-- Engine 1 -->
+    <engine>
+      <name>start1</name>
+      <path>starter.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/controls/engines/engine[0]/starter</property>
+      </condition>
+      <volume>
+        <property>engines/engine[0]/n2</property>
+        <factor> 0.09 </factor>
+        <min> 0.3 </min>
+        <max> 0.9 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[0]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>engine1</name>
+      <path>running.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[0]/running</property>
+      </condition>
+      <volume>
+        <property>/engines/engine[0]/prop-thrust</property>
+        <factor type="double">0.12013</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[0]/n1</property>
+        <factor>0.2</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>whine1</name>
+      <path>running.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[0]/running</property>
+      </condition>
+      <volume>
+        <property>/engines/engine[0]/n2</property>
+        <factor type="double">0.1225</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[0]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>shutdown1</name>
+      <path>shutdown.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/controls/engines/engine[0]/cutoff</property>
+      </condition>
+      <volume>
+        <property>/engines/engine[0]/n2</property>
+        <factor>0.09</factor>
+        <min>0.3</min>
+        <max>0.9</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <!-- Engine 2 -->
+    <engine>
+      <name>start2</name>
+      <path>starter.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/controls/engines/engine[1]/starter</property>
+      </condition>
+      <volume>
+        <property>engines/engine[1]/n2</property>
+        <factor> 0.09 </factor>
+        <min> 0.3 </min>
+        <max> 0.9 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine[1]/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>engine2</name>
+      <path>running.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[1]/running</property>
+      </condition>
+      <volume>
+        <property>/engines/engine[1]/prop-thrust</property>
+        <factor type="double">0.12013</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[1]/n1</property>
+        <factor>0.2</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>whine2</name>
+      <path>running.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine[1]/running</property>
+      </condition>
+      <volume>
+        <property>/engines/engine[1]/n2</property>
+        <factor type="double">0.1225</factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[1]/n2</property>
+        <factor>0.02</factor>
+        <offset>-0.1</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>shutdown2</name>
+      <path>shutdown.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/controls/engines/engine[1]/cutoff</property>
+      </condition>
+      <volume>
+        <property>/engines/engine[1]/n2</property>
+        <factor>0.09</factor>
+        <min>0.3</min>
+        <max>0.9</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <!-- *************************************************** -->
+    <rumble>
+      <name>rumble0</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <property>/gear/gear[0]/wow</property>
+      </condition>
+      <volume>
+        <property>/gear/gear[0]/rollspeed-ms</property>
+        <type>log</type>
+        <factor>0.12</factor>
+      </volume>
+      <pitch>
+        <property>/gear/gear[0]/rollspeed-ms</property>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+
+    <rumble>
+      <name>rumble1</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <property>/gear/gear[1]/wow</property>
+      </condition>
+      <volume>
+        <property>/gear/gear[1]/rollspeed-ms</property>
+        <type>log</type>
+        <factor>0.12</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+
+    <rumble>
+      <name>rumble2</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <property>/gear/gear[2]/wow</property>
+      </condition>
+      <volume>
+        <property>/gear/gear[2]/rollspeed-ms</property>
+        <type>log</type>
+        <factor>0.12</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+
+    <gear>
+      <name>gear0</name>
+      <mode>in-transit</mode>
+      <path>gear.wav</path>
+      <property>/gear/gear[0]/position-norm</property>
+      <pitch>
+        <internal>dt_play</internal>
+        <offset>1.0</offset>
+        <factor>-0.001</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock0</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[0]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock0</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[0]/position-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear1</name>
+      <mode>in-transit</mode>
+      <path>gear.wav</path>
+      <property>/gear/gear[1]/position-norm</property>
+      <pitch>
+        <internal>dt_play</internal>
+        <offset>1.0</offset>
+        <factor>-0.001</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock1</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[1]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock1</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[1]/position-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear2</name>
+      <mode>in-transit</mode>
+      <path>gear.wav</path>
+      <property>/gear/gear[2]/position-norm</property>
+      <pitch>
+        <internal>dt_play</internal>
+        <offset>1.0</offset>
+        <factor>-0.001</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock2</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[2]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock2</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[2]/position-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <squeal>
+      <name>squeal0</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <property>/gear/gear[0]/wow</property>
+      </condition>
+      <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.05</factor>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+
+    <squeal>
+      <name>squeal1</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <property>/gear/gear[1]/wow</property>
+      </condition>
+      <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.05</factor>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+
+    <squeal>
+      <name>squeal2</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <property>/gear/gear[2]/wow</property>
+      </condition>
+      <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.05</factor>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+
+    <flap>
+      <name>flaps</name>
+      <mode>in-transit</mode>
+      <path>flaps.wav</path>
+      <property>/surface-positions/flap-pos-norm</property>
+      <volume>
+        <factor>0.15</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </flap>
+
+    <spoiler>
+      <name>spoilers</name>
+      <mode>in-transit</mode>
+      <path>flaps.wav</path>
+      <property>/surface-positions/spoiler-pos-norm</property>
+      <volume>
+        <factor>0.15</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </spoiler>
+
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>wind.wav</path>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.002</factor>
+        <!--min>0.03</min-->
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </wind>
+
+    <stall>
+      <name>stall</name>
+      <path>stall.wav</path>
+      <property>/sim/alarms/stall-warning</property>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <min>90.0</min>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </stall>
+
+    <!-- CANOPY -->
+    <door>
+      <name>CanopyOpen1</name>
+      <path>DoorOpen.wav</path>
+      <condition>
+        <greater-than>
+          <property>canopy/position-norm</property>
+          <value>0.1</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <factor>0.8</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </door>
+
+    <door>
+      <name>CanopyClose1</name>
+      <path>DoorClosed.wav</path>
+      <condition>
+        <equals>
+          <property>canopy/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </door>
+
+    <boom>
+      <name>Sonic Boom</name>
+      <path>sonicboom.wav</path>
+      <mode>once</mode>  
+      <condition>
+      <and>
+        <greater-than>
+          <property>/velocities/mach</property>
+          <value> 1.0 </value>
+        </greater-than>
+        <less-than>
+          <property>/position/altitude-ft</property>
+          <value> 5000 </value>
+        </less-than>
+      </and>
+    </condition>
+      <position>
+         <x>2.5</x>
+         <y>0</y>
+         <z>0</z>
+      </position>
+      <volume>
+        <value>1</value>
+      </volume>  
+      <max-dist>10000</max-dist>
+    </boom>
+
+    <rain>
+      <name>rain</name>
+      <mode>looped</mode>
+      <path>rain_canopy.wav</path>
+      <condition>
+        <greater-than>
+          <property>/environment/metar/rain-norm</property>
+          <value>0.2</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>/environment/metar/rain-norm</property>
+        <factor>1.00</factor>
+        <offset>0.00</offset>
+        <min>0.4</min>
+        <max>0.9</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.001</factor>
+        <offset>1.0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rain>
+
+    <!-- WEAPONS -->
+    <flare>
+      <name>Flares</name>
+      <path>Flare.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>flares/released1</property>
+      </condition>
+      <volume>
+        <factor>1</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </flare>
+
+    <rocket-single>
+      <name>rocket-singleL</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal1</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleR</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal2</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <bomb-single>
+      <name>bomb-single1L</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal3</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single1R</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal4</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single2L</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal5</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single2R</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal6</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single3L</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal7</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single3R</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal8</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+  </fx>
+
+</PropertyList>
