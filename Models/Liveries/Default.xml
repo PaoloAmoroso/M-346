@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">T-346A, Italian Air Force</name>
+                <texture>Models/Default.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Models/Default.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

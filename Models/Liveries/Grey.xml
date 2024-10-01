@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">T-346A, Grey</name>
+                <texture>Liveries/Grey.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Grey.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>
