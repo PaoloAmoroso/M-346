@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- BEACONS Lights -->
+  <model>
+    <path>beacon.xml</path>
+    <offsets>
+      <x-m> 1.30980 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.95845 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>beacon.xml</path>
+    <offsets>
+      <x-m> -0.72715 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.59748 </z-m>
+    </offsets>
+  </model>
+
+  <!-- NAV Lights -->
+  <model>
+    <name>LeftRedLight</name>
+    <path>RedLight.xml</path>
+    <offsets>
+      <x-m> -0.402290 </x-m>
+      <y-m> -1.142100 </y-m>
+      <z-m>  0.021086 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>RightGreenLight</name>
+    <path>GreenLight.xml</path>
+    <offsets>
+      <x-m> -0.402290 </x-m>
+      <y-m>  1.142100 </y-m>
+      <z-m>  0.021086 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>LeftStrobeLight</name>
+    <path>StrobeLight.xml</path>
+    <offsets>
+      <x-m> -0.402290 </x-m>
+      <y-m> -1.142100 </y-m>
+      <z-m>  0.021086 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>RightStrobeLight</name>
+    <path>StrobeLight.xml</path>
+    <offsets>
+      <x-m> -0.402290 </x-m>
+      <y-m>  1.142100 </y-m>
+      <z-m>  0.021086 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>TailWhiteLight</name>
+    <path>WhiteLight.xml</path>
+    <offsets>
+      <x-m> 5.98220 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.19844 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Landing Lights -->
+  <model>
+    <name>LandingLight</name>
+    <path>light-cone.xml</path>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <offsets>
+      <x-m> -2.87120 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.84955 </z-m>
+      <pitch-deg> -10 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LandingLight</object-name>
+    <property>gear/gear[0]/caster-angle-deg</property>
+    <factor> -0.8 </factor>
+    <center>
+      <x-m> -3.06209 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.74141 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>fire.xml</path>
+    <condition>
+          <and>
+            <property>sim/weight[3]/selected</property>
+		 <value>Cannon</value>
+          </and> 
+      <property>controls/armament/trigger</property>
+    </condition>
+    <offsets>
+      <x-m> -1.3713 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -1.1173 </z-m>
+      <pitch-deg> 180 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
