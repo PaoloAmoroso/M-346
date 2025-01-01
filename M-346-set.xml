@@ -672,6 +672,17 @@
 		</weight>
 	
 	</sim>
+	
+	<systems>
+		<refuel>
+			<type>probe</type>
+			<serviceable type="bool">true</serviceable>
+                        <max-fuel-transfer-lbs-min>6000</max-fuel-transfer-lbs-min>
+                        <offset-x-m>0</offset-x-m>
+                        <offset-y-m>0</offset-y-m>
+                        <offset-z-m>0</offset-z-m>
+		</refuel>  
+       </systems>
 
 	<controls>
 		
@@ -1149,6 +1160,10 @@
 		<radar2>
 			<file>Aircraft/M-346/Nasal/radar2.nas</file>
 		</radar2>
+
+		<aar>
+			<file>Aircraft/Generic/aar.nas</file>
+		</aar>
 		
 		<MpEncode>
 			<file>Aircraft/M-346/Nasal/MpEncode.nas</file>
@@ -1157,10 +1172,10 @@
 		<mode>
 			<file>Aircraft/M-346/Nasal/Mode.nas</file>
 		</mode>
-           <engines>
-                <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
-                <file>Aircraft/M-346/Nasal/engines-yasim.nas</file>
-    </engines>
+                <engines>
+                        <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+                        <file>Aircraft/M-346/Nasal/engines-yasim.nas</file>
+                </engines>
     
 	</nasal>
 
