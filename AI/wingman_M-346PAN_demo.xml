@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<scenario>
+
+		<name>M-346PAN Formation</name>
+		<description>
+			This scenario formates 2 M-346PAN to the
+			parent ac at the position designated by
+			the x,y,z ofsets.
+			Paolo Amoroso
+		</description>
+
+		<entry>
+			<name>Pony_1</name>
+			<type>wingman</type>
+			<model>AI/Aircraft/M-346/M-346-FrecceTricolori.xml</model>
+			<x-offset>-35</x-offset>
+			<y-offset>-63</y-offset>
+			<z-offset>0</z-offset>
+			<formate>true</formate>
+			<max-speed-kts>600</max-speed-kts>
+			<coefficients>
+				<heading>5.0</heading>
+				<pitch>4.0</pitch>
+				<bank>4.0</bank>
+				<speed>2.5</speed>
+			</coefficients>
+		</entry>
+
+		<entry>
+			<name>Pony_2</name>
+			<type>wingman</type>
+			<model>AI/Aircraft/M-346/M-346-FrecceTricolori.xml</model>
+			<x-offset>-35</x-offset>
+			<y-offset>63</y-offset>
+			<z-offset>0</z-offset>
+			<formate>true</formate>
+			<max-speed-kts>600</max-speed-kts>
+			<coefficients>
+				<heading>5.0</heading>
+				<pitch>4.0</pitch>
+				<bank>4.0</bank>
+				<speed>2.5</speed>
+			</coefficients>
+		</entry>
+
+	</scenario>
+
+</PropertyList>

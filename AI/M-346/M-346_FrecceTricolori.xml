@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- M-346PAN Frecce Tricolori model config file -->
+<!-- Paolo Amoroso 2025/02/18 -->
+
+<PropertyList>
+	<path>M-346_FrecceTricolori.ac</path>
+	<offsets>
+		<x-m>0</x-m>
+	</offsets>
+
+</PropertyList>
