@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>mfd-pfd.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fond</object-name>
+    <object-name>fondL</object-name>
+    <object-name>canvasCadre</object-name>
+    <object-name>fondR</object-name>
+    <object-name>infoL</object-name>
+    <object-name>infoC</object-name>
+    <object-name>infoR</object-name>
+    <object-name>knobL</object-name>
+    <object-name>knobs</object-name>
+    <object-name>knobR</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>canvasCadre</object-name>
+    <object-name>knobL</object-name>
+    <object-name>knobs</object-name>
+    <object-name>knobR</object-name>
+    <object-name>Radar</object-name>
+
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <model>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/mfd-pfd/pfd.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.162 </y-m>
+      <z-m> -0.026 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 0.78 </x-offset>
+        <y-offset> 0.78 </y-offset>
+        <z-offset> 0.78 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <model>
+    <name>MFDSCREEN</name>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/mfd-pfd/mfd.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m>  0.163 </y-m>
+      <z-m> -0.026 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 0.77 </x-offset>
+        <y-offset> 0.77 </y-offset>
+        <z-offset> 0.77 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <model>
+    <name>EICASSCREEN</name>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/mfd-pfd/eicas.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m>  0.163 </y-m>
+      <z-m> -0.026 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 0.77 </x-offset>
+        <y-offset> 0.77 </y-offset>
+        <z-offset> 0.77 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>MFDSCREEN</object-name>
+    <condition>
+      <not><property>instrumentation/pfd/mode</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>EICASSCREEN</object-name>
+    <condition>
+      <property>instrumentation/pfd/mode</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>knobR</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/pfd/mode</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knobR</object-name>
+    <property>instrumentation/pfd/mode</property>
+    <factor> 35 </factor>
+    <center>
+      <x-m> 0.010 </x-m>
+      <y-m> 0.249 </y-m>
+      <z-m> 0.070 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+<!-- Map/Radar Mode -->
+
+  <model>
+    <name>Radar</name>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/Radar/nd.xml</path>
+    <offsets>
+      <z-m>  0.00400 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 1.5 </x-offset>
+        <y-offset> 1.5 </y-offset>
+        <z-offset> 1.5 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>canvasCadre</object-name>
+    <condition>
+      <not><property>instrumentation/radar/mode</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Radar</object-name>
+    <condition>
+      <property>instrumentation/radar/mode</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>canvasCadre</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/radar/mode</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Radar</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/radar/mode</property>
+      </binding>
+    </action>
+  </animation>
+
+<!-- Radar Button for Air Traffic Informations -->
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>knobL</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/radar/info</property>
+      </binding>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>bridge</tooltip-id>
+        <label>Aircraft Informations</label>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knobL</object-name>
+    <property>instrumentation/radar/info</property>
+    <factor> 35 </factor>
+    <center>
+      <x-m> 0.010 </x-m>
+      <y-m> 0.249 </y-m>
+      <z-m> 0.070 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
