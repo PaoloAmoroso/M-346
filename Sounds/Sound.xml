@@ -608,6 +608,66 @@
       <max-dist>1000</max-dist>
     </rocket-single>
 
+    <rocket-single>
+      <name>rocket-singleR</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal10</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleR</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal11</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleR</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal12</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleR</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal13</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
     <bomb-single>
       <name>bomb-single1L</name>
       <mode>once</mode>
@@ -689,6 +749,36 @@
       <path>bomb.wav</path>
       <condition>
         <property>controls/signal8</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single3R</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal14</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </bomb-single>
+
+    <bomb-single>
+      <name>bomb-single3R</name>
+      <mode>once</mode>
+      <path>bomb.wav</path>
+      <condition>
+        <property>controls/signal15</property>
       </condition>
       <volume>
         <factor>1.0</factor>
