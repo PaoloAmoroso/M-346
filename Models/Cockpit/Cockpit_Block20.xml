@@ -1,0 +1,146 @@
+<PropertyList>
+    
+    <path>Cockpit.ac</path>
+    
+	<!-- Pilot models -->
+	
+	<model>
+        <name>Pilot</name>
+		<path>Aircraft/M-346/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m>-2.38</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.20</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+	
+	<model>
+        <name>Co-pilot</name>
+		<path>Aircraft/M-346/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m>-0.98</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.55</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+     <animation>
+       <type>select</type>
+          <object-name>Co-pilot</object-name>
+          <condition>
+          <property>sim/model/hide-copilot</property>
+          </condition>
+     </animation>
+	
+    <!-- Seats -->	
+    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Interior/Seat/Seat.xml</path>
+        <offsets>
+            <x-m>-2.40009</x-m>
+            <y-m> 0</y-m>
+            <z-m> 0.254636</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Interior/Seat/Seat.xml</path>
+        <offsets>
+            <x-m>-1.0097</x-m>
+            <y-m> 0</y-m>
+            <z-m> 0.58567</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <!-- Interior -->	
+    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Interior.xml</path>
+    </model>
+	
+    <!-- FRONT INSTRUMENTS -->
+
+    <!-- MFD-PFD Main Screen -->
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/mfd-pfd/mfd-pfd.xml</path>
+        <offsets>
+            <x-m> -3.0864 </x-m>
+            <y-m>  0.0000 </y-m>
+            <z-m>  0.2275 </z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+	
+    <!-- Compass -->
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/Compass/F.Compass.xml</path>
+        <offsets>
+            <x-m>-2.92777</x-m>
+            <y-m> 0.259256</y-m>
+            <z-m> 0.658333</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- HUD -->    
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/HUD/HUD.xml</path>
+        <offsets>
+            <x-m>-3.12564</x-m>
+            <y-m>0</y-m>
+            <z-m>0.534638</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- SMOKE SYSTEM for M-346PAN -->
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/Smokes/smokes.xml</path>
+        <offsets>
+            <x-m> -3.003700 </x-m>
+            <y-m> -0.375490 </y-m>
+            <z-m>  0.093857 </z-m>
+            <pitch-deg> -69.4 </pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- INSTRUCTOR INSTRUMENTS -->
+
+    <!-- MFD-PFD Main Screen -->
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/mfd-pfd/mfd-pfd.xml</path>
+        <offsets>
+            <x-m> -1.7102 </x-m>
+            <y-m>  0.0000 </y-m>
+            <z-m>  0.5957 </z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- Compass -->
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/Compass/B.Compass.xml</path>
+        <offsets>
+            <x-m>-1.7001</x-m>
+            <y-m> 0</y-m>
+            <z-m> 0.8183</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <!-- Repeater -->
+    <model>
+        <path>Aircraft/M-346/Models/Cockpit/Instruments/Repeater/Repeater.xml</path>
+        <offsets>
+            <x-m>-1.6998</x-m>
+            <y-m>0</y-m>
+            <z-m>0.764637</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+</PropertyList>
