@@ -3,15 +3,12 @@
 <PropertyList>
 
 	<sim>
-    
-		<!-- Info -->
-    
-		<description>Leonardo M-346 Master</description>
+    		<description>Leonardo M-346F Master (Block 20)</description>
 		<author>Paolo Amoroso, pjedvaj, StuartC and Tomaskom</author>
 		<status>1.0.2</status>
 		<flight-model>yasim</flight-model>
 		<aero>M-346-yasim</aero>
-
+           <variant-of>M-346</variant-of>
 		<tags>
 			<tag>Leonardo</tag>
                 <tag>aermacchi</tag>
@@ -151,7 +148,7 @@
 		</startup>
 	
 		<model>
-			<path>Aircraft/M-346/Models/M-346.xml</path>
+			<path>Aircraft/M-346/Models/M-346F.xml</path>
 			<hide-tanks type="int">0</hide-tanks>
 			<hide-lights type="int">1</hide-lights>	
 		</model>
@@ -320,7 +317,7 @@
                                 <label>Lights</label>
                                 <binding>
                                      <command>nasal</command>
-                                     <script>M346.lights_dialog1.toggle()</script>
+                                     <script>m346.lights_dialog1.toggle()</script>
                                 </binding>
                            </item>
                            <item>
@@ -341,113 +338,25 @@
                                      <property>sim/model/hide-FA</property>
                                 </binding>
                            </item>
+      <item>
+        <label>External Lights</label>
+        <binding>
+          <command>nasal</command>
+          <script>M346.lights_dialog1.toggle()</script>
+        </binding>
+      </item>
+
                            <item>
         <label>--- M-346 Weapons ---</label>
         <enabled>false</enabled>
                            </item>
-                           <item>
-        <label>Weapons Racks</label>
-        <binding>
-          <command>property-toggle</command>
-          <property>sim/model/hide-Racks</property>
-        </binding>
-                           </item>
-                           <item>
-        <label>Reload Weapons</label>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal1</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal2</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal3</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal4</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal5</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal6</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal7</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal8</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal9</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal10</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal11</property>
-          <value>0</value>
-        </binding>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/signal12</property>
-          <value>0</value>
-        </binding>
+      <item>
+        <label>External Loads</label>
         <binding>
           <command>nasal</command>
-          <script>
-          if (!getprop("gear/gear[0]/wow")) {
-            screen.log.write("This is only possible on ground.");
-            return;
-          }
-          if (getprop("gear/gear[0]/position-norm")) {
-            screen.log.write("Weapons Reloaded.");
-          }
-          </script>
+          <script>M346.loads_dialog2.toggle()</script>
         </binding>
-        </item>
-					<!-- <item>
-						<label>Reload Cannon</label>
-						<binding>
-							<command>nasal</command>
-							<script>cannon.reload()</script>
-						</binding>
-					</item>
-					<item>
-						<label>Reload Rockets</label>
-						<binding>
-							<command>nasal</command>
-							<script>rockets.reload()</script>
-						</binding>
-					</item> -->
-					<item>
-						<label>Toggle ammo reports</label>
-						<binding>
-							<command>property-toggle</command>
-							<property>/controls/armament/report-ammo</property>
-						</binding>
-					</item>
+      </item>
 				</menu>
 			</default>
 		</menubar>
@@ -455,7 +364,7 @@
 		<!-- Help -->
 	  	
 		<help>
-			<title>Leonardo M-346 Master</title>
+			<title>Leonardo M-346 Master (Block 20)</title>
 			<key>
 				<name>}</name>
 				<desc>Start up/Shut down engines</desc>
@@ -473,16 +382,16 @@
 				<desc>Flares Launch</desc>
 			</key>
                 <key>
-				<name>u | i</name>
-				<desc>AIM-9M Launch</desc>
+				<name>E</name>
+				<desc>Pylon 1 | 7</desc>
 			</key>
                 <key>
-				<name>n/N | M/n</name>
-				<desc>MK. 82 Launch</desc>
+				<name>n</name>
+				<desc>Pylon 2 | 6</desc>
 			</key>
                 <key>
-				<name>j | k</name>
-				<desc>GBU-12 Launch</desc>
+				<name>m</name>
+				<desc>Pylon 3 | 5</desc>
 			</key>
                 <key>
                      <name>Q</name>
@@ -510,7 +419,7 @@
 				<int n="5" alias="/engines/engine[0]/state" />
 				<int n="6" alias="/engines/engine[1]/state" />
 				<int n="7" alias="/sim/crashed" />
-				<int n="8" alias="/controls/armament/trigger-GSh-23" />
+				<int n="8" alias="/controls/armament/trigger" />
                       <int n="9" alias="/smoke/active"/>
                       <int n="10" alias="/smoke/colors"/>
 				<float n="0" alias="/surface-positions/left-taileron-pos-norm"/>
@@ -522,155 +431,34 @@
 				<float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat right engine -->
                       <!-- For Bombable -->
                       <int n="10" type="int" alias="controls/armament/trigger">0</int>
+                      <string n="9"  type="string"/>
+
 			</generic>
 		</multiplay>
     
 		<mp-systems>
 			<combat-enabled type="bool">true</combat-enabled>
 		</mp-systems>
-	
-		<!-- Payload -->
-    
-		<weight n="0">
-			<name>Pylon 1 Right</name>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-			<opt>
-				<name>AIM-9M</name>
-				<lbs>21</lbs>
-			</opt>
-		</weight>
 
-		<weight n="1">
-			<name>Pylon 2 Right</name>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-                <opt>
-				<name>MK-82</name>
-				<lbs>531</lbs>
-			</opt>
-                <!-- <opt>
-				<name>BL-13 rockets</name>
-				<lbs>600</lbs>
-			</opt> -->
-		</weight>	
-    
-		<weight n="2">
-			<name>Pylon 3 Right</name>
-			<tank>3</tank>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-                <opt>
-				<name>MK-82</name>
-				<lbs>531</lbs>
-			</opt>
-                <opt>
-				<name>GBU-12</name>
-				<lbs>510</lbs>
-			</opt>
-			<opt>
-				<name>Tank</name>
-				<lbs>600</lbs>
-				<gals>170</gals>
-			</opt>
-		</weight>	
-    
-		<weight n="3">
-			<name>Centerline</name>
-			<tank>4</tank>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-                <opt>
-				<name>Tank</name>
-				<lbs>600</lbs>
-				<gals>170</gals>
-			</opt>
-                <opt>
-				<name>Litening Targeting Pod</name>
-				<lbs>455</lbs>
-			</opt>
-                <opt>
-				<name>Sniper Targeting Pod</name>
-				<lbs>445</lbs>
-			</opt>
-			<opt>
-				<name>Cannon</name>
-				<lbs>100</lbs>
-			</opt>
-		</weight>	
-    
-		<weight n="4">
-			<name>Pylon 3 Left</name>
-			<tank>5</tank>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-                <opt>
-				<name>MK-82</name>
-				<lbs>531</lbs>
-			</opt>
-                <opt>
-				<name>GBU-12</name>
-				<lbs>510</lbs>
-			</opt>
-			<opt>
-				<name>Tank</name>
-				<lbs>600</lbs>
-				<gals>170</gals>
-			</opt>
-		</weight>
-    
-		<weight n="5">
-			<name>Pylon 2 Left</name>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-                <opt>
-				<name>MK-82</name>
-				<lbs>531</lbs>
-			</opt>
-			<!-- <opt>
-				<name>BL-13 rockets</name>
-				<lbs>600</lbs>
-			</opt> -->
-		</weight>
-    
-		<weight n="6">
-			<name>Pylon 1 Left</name>
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt>
-				<name>none</name>
-				<lbs>0</lbs>
-			</opt>
-			<opt>
-				<name>AIM-9M</name>
-				<lbs>21</lbs>
-			</opt>
-		</weight>
-	
+           <aircraft-data>
+                <path>/sim/model/hide-copilot</path>
+                <path>/sim/model/hide-Probe</path>
+                <path>/sim/model/hide-FA</path>
+                <path>/sim/model/hide-Racks</path>
+                <path>/sim/model/show-AIM9M-W</path>
+                <path>/sim/model/show-AIM9M-E</path>
+                <path>/sim/model/show-AIM9M-I</path>
+                <path>/sim/model/show-MK82-E</path>
+                <path>/sim/model/show-MK82-I</path>
+                <path>/sim/model/show-GBU12-E</path>
+                <path>/sim/model/show-GBU12-I</path>
+                <path>/sim/model/show-Cannon</path>
+                <path>/sim/model/show-Litening</path>
+                <path>/sim/model/show-Sniper</path>
+                <path>/sim/model/show-Tanks</path>
+                <path>/sim/model/show-TankC</path>
+           </aircraft-data>
+
 	</sim>
 
        <systems>
@@ -689,40 +477,7 @@
 		<gear>
 			<brake-parking type="double">1.0</brake-parking>
 		</gear>
-		
-		<armament>
-			<trigger>0</trigger>
-			<trigger1>0</trigger1>
-			<trigger2>0</trigger2>
-			<station n="0">
-				<release type="bool">false</release>
-			</station>
-			<station n="1">
-				<release type="bool">false</release>
-			</station>
-			<station n="2">
-				<release type="bool">false</release>
-			</station>
-			<station n="3">
-				<release type="bool">false</release>
-			</station>
-			<station n="4">
-				<release type="bool">false</release>
-			</station>
-			<station n="5">
-				<release type="bool">false</release>
-			</station>
-			<station n="6">
-				<release type="bool">false</release>
-			</station>
-			<station n="7">
-				<release type="bool">false</release>
-			</station>
-			<station n="8">
-				<release type="bool">false</release>
-			</station>
-		</armament>
-		
+				
 	</controls>
 
 	<consumables>
@@ -740,15 +495,15 @@
 				<level-gal_us archive="y">216.176</level-gal_us>
 			</tank>
 			<tank n="3">
-				<name>Right-DropTank</name>
+				<name>Right Drop Tank</name>
 				<selected type="bool">false</selected>
 			</tank>
 			<tank n="4">
-				<name>Centre-DropTank</name>
+				<name>Centre Drop Tank</name>
 				<selected type="bool">false</selected>
 			</tank>
 			<tank n="5">
-				<name>Left-DropTank</name>
+				<name>Left Drop Tank</name>
 				<selected type="bool">false</selected>
 			</tank>
 		</fuel>
@@ -756,9 +511,15 @@
 
      <ai>
            <submodels>
-                     <AIM9-number type="int">2</AIM9-number>
-                     <GBU12-number type="int">2</GBU12-number>
-                     <MK82-number type="int">4</MK82-number>
+                     <AIM9W-number type="int">2</AIM9W-number>
+                     <AIM9E-number type="int">2</AIM9E-number>
+                     <AIM9I-number type="int">2</AIM9I-number>
+                     <GBU12E-number type="int">2</GBU12E-number>
+                     <GBU12I-number type="int">2</GBU12I-number>
+                     <MK82E-number type="int">2</MK82E-number>
+                     <MK82I-number type="int">2</MK82I-number>
+                     <Tanks-number type="int">2</Tanks-number>
+                     <TankC-number type="int">2</TankC-number>
            </submodels>
      </ai>
 
@@ -780,15 +541,6 @@
                
 				</binding>
 			</key>
-
-                <!-- <key n="83">
-                     <name>S</name>
-                     <desc>Open Intake Doors</desc>
-                     <binding>
-                          <command>property-toggle</command>
-     <property>controls/manteinance</property>
-                     </binding>
-                </key> -->
        
 			<key n="99">
 				<name>c</name>
@@ -798,48 +550,203 @@
 					<script>canopy.canopy_switch(2)</script>
 				</binding>
 			</key>
+              
+               <key n="81">
+      <name>Q</name>
+      <desc>Reset view</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("sim/current-view/field-of-view",      getprop("sim/current-view/config/default-field-of-view-deg"));
+          setprop("sim/current-view/heading-offset-deg", getprop("sim/current-view/config/heading-offset-deg"));
+          setprop("sim/current-view/pitch-offset-deg",   getprop("sim/current-view/config/pitch-offset-deg"));
+          setprop("sim/current-view/roll-offset-deg",    getprop("sim/current-view/config/roll-offset-deg"));
+        </script>
+      </binding>
+    </key>
 
-                <key n="101">
-                     <name>e</name>
-                     <desc>Guns</desc>
-                     <binding>
-                          <command>property-assign</command>
-                          <property>controls/armament/trigger</property>
-                          <value>true</value>
-                          <!-- <condition>
-                            <and>
-                              <property>sim/weight[3]/selected</property>
-			              <value>Cannon</value>
-                           </and>
-                          </condition> -->
-                     </binding>
-                     <mod-up>
-                     <binding>
-                          <command>property-assign</command>
-                          <property>controls/armament/trigger</property>
-                          <value>false</value>
-                          <!-- <condition>
-                            <and>
-                              <property>sim/weight[3]/selected</property>
-			              <value>Cannon</value>
-                           </and>
-                          </condition> -->
-                     </binding>
-                     </mod-up>
-                </key>
-       
-			<!-- <key n="110">
-				<name>n</name>
-				<desc>Retract speedbrake</desc>
-				<binding>
-					<command>property-adjust</command>
-					<property>/controls/flight/speedbrake</property>
-					<step type="double">-0.2</step>
-					<min type="double">0</min>
-					<max type="double">1</max>
-				</binding>
-			</key> -->
-       
+<!-- WEAPONS KEYS -->
+
+    <key n="101">
+      <name>e</name>
+      <desc>Cannon Trigger</desc>
+      <binding>
+        <condition>
+          <and>
+            <property>sim/model/show-Cannon</property>
+              <value>1</value>
+          </and>
+        </condition>
+        <command>property-toggle</command>
+        <property>controls/armament/trigger</property>
+        <value type="bool">true</value>
+      </binding>
+      <mod-up>
+        <binding>
+        <condition>
+          <and>
+            <property>sim/model/show-Cannon</property>
+              <value>1</value>
+          </and>
+        </condition>
+          <command>property-assign</command>
+          <property>controls/armament/trigger</property>
+          <value type="bool">false</value>
+        </binding>
+      </mod-up>
+    </key>
+
+
+<key n="69">
+  <name>Shift+e</name>
+  <desc>Release Missile</desc>
+  <binding>
+    <command>nasal</command>
+    <script><![CDATA[
+
+      # AIM-9M Wingtip
+            if ((getprop("/sim/model/show-AIM9M-W")) and !getprop("/sim/launching-AIM9W")) {
+        var AIM9WCount = getprop("ai/submodels/AIM9W-number");
+        if (AIM9WCount > 0 and AIM9WCount <= 2) {
+          setprop("/sim/launching-AIM9W", 1);
+
+          var triggerPath = "/controls/signal" ~ (3 - AIM9WCount); #(3 - 2) = 1 allora "signal1" e (3 - 1) = 2 allora "signal2"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/AIM9W-number", AIM9WCount - 1);
+            setprop("/sim/launching-AIM9W", 0);
+          }, 0.3);
+        }
+      }
+
+    ]]></script>
+  </binding>
+</key>
+
+    <key n="110">
+      <name>n</name>
+  <binding>
+    <command>nasal</command>
+    <script><![CDATA[
+
+      # AIM-9M External Pylons
+            if ((getprop("/sim/model/show-AIM9M-E")) and !getprop("/sim/launching-AIM9E")) {
+        var AIM9ECount = getprop("ai/submodels/AIM9E-number");
+        if (AIM9ECount > 0 and AIM9ECount <= 2) {
+          setprop("/sim/launching-AIM9E", 1);
+
+          var triggerPath = "/controls/signal" ~ (12 - AIM9ECount); #(12 - 2) = 10 allora "signal10" e (12 - 1) = 11 allora "signal11"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/AIM9E-number", AIM9ECount - 1);
+            setprop("/sim/launching-AIM9E", 0);
+          }, 0.3);
+        }
+      }
+
+      # MK-82 External Pylons
+            if ((getprop("/sim/model/show-MK82-E")) and !getprop("/sim/launching-MK82E")) {
+        var MK82ECount = getprop("ai/submodels/MK82E-number");
+        if (MK82ECount > 0 and MK82ECount <= 2) {
+          setprop("/sim/launching-MK82E", 1);
+
+          var triggerPath = "/controls/signal" ~ (5 - MK82ECount); #(5 - 2) = 3 allora "signal3" e (5 - 1) = 4 allora "signal4"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/MK82E-number", MK82ECount - 1);
+            setprop("/sim/launching-MK82E", 0);
+          }, 0.3);
+        }
+      }
+
+      # GBU-12 External Pylons
+            if ((getprop("/sim/model/show-GBU12-E")) and !getprop("/sim/launching-GBU12E")) {
+        var GBU12ECount = getprop("ai/submodels/GBU12E-number");
+        if (GBU12ECount > 0 and GBU12ECount <= 2) {
+          setprop("/sim/launching-GBU12E", 1);
+
+          var triggerPath = "/controls/signal" ~ (16 - GBU12ECount); #(16 - 2) = 14 allora "signal14" e (16 - 1) = 15 allora "signal15"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/GBU12E-number", GBU12ECount - 1);
+            setprop("/sim/launching-GBU12E", 0);
+          }, 0.3);
+        }
+      }
+
+    ]]></script>
+  </binding>
+    </key>
+
+    <key n="109">
+      <name>m</name>
+  <binding>
+    <command>nasal</command>
+    <script><![CDATA[
+
+      # AIM-9M Internal Pylons
+            if ((getprop("/sim/model/show-AIM9M-I")) and !getprop("/sim/launching-AIM9I")) {
+        var AIM9ICount = getprop("ai/submodels/AIM9I-number");
+        if (AIM9ICount > 0 and AIM9ICount <= 2) {
+          setprop("/sim/launching-AIM9I", 1);
+
+          var triggerPath = "/controls/signal" ~ (14 - AIM9ICount); #(14 - 2) = 12 allora "signal12" e (14 - 1) = 13 allora "signal13"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/AIM9I-number", AIM9ICount - 1);
+            setprop("/sim/launching-AIM9I", 0);
+          }, 0.3);
+        }
+      }
+
+      # MK-82 Internal Pylons
+            if ((getprop("/sim/model/show-MK82-I")) and !getprop("/sim/launching-MK82I")) {
+        var MK82ICount = getprop("ai/submodels/MK82I-number");
+        if (MK82ICount > 0 and MK82ICount <= 2) {
+          setprop("/sim/launching-MK82I", 1);
+
+          var triggerPath = "/controls/signal" ~ (7 - MK82ICount); #(7 - 2) = 5 allora "signal5" e (7 - 1) = 6 allora "signal6"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/MK82I-number", MK82ICount - 1);
+            setprop("/sim/launching-MK82I", 0);
+          }, 0.3);
+        }
+      }
+
+      # GBU-12 Internal Pylons
+            if ((getprop("/sim/model/show-GBU12-I")) and !getprop("/sim/launching-GBU12I")) {
+        var GBU12ICount = getprop("ai/submodels/GBU12I-number");
+        if (GBU12ICount > 0 and GBU12ICount <= 2) {
+          setprop("/sim/launching-GBU12I", 1);
+
+          var triggerPath = "/controls/signal" ~ (9 - GBU12ICount); #(9 - 2) = 7 allora "signal7" e (9 - 1) = 8 allora "signal8"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/GBU12I-number", GBU12ICount - 1);
+            setprop("/sim/launching-GBU12I", 0);
+          }, 0.3);
+        }
+      }
+
+    ]]></script>
+  </binding>
+    </key>
+
 			<key n="113">
 		          <name>q</name>
 		          <desc>Flare release</desc>
@@ -857,56 +764,7 @@
 		          </mod-up>
 	          </key>
 
-               <key n="81">
-      <name>Q</name>
-      <desc>Reset view</desc>
-      <binding>
-        <command>nasal</command>
-        <script>
-          setprop("sim/current-view/field-of-view",      getprop("sim/current-view/config/default-field-of-view-deg"));
-          setprop("sim/current-view/heading-offset-deg", getprop("sim/current-view/config/heading-offset-deg"));
-          setprop("sim/current-view/pitch-offset-deg",   getprop("sim/current-view/config/pitch-offset-deg"));
-          setprop("sim/current-view/roll-offset-deg",    getprop("sim/current-view/config/roll-offset-deg"));
-        </script>
-      </binding>
-    </key>
-
-    <key n="117">
-     <name>u</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal1</property>
-        <value>true</value>
-      </binding>
-    </key>
-
-    <key n="105">
-      <name>i</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal2</property>
-        <value>true</value>
-      </binding>
-    </key>
-
-    <key n="110">
-      <name>n</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal3</property>
-        <value>true</value>
-      </binding>
-    </key>
-
-    <key n="109">
-      <name>m</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal4</property>
-        <value>true</value>
-      </binding>
-    </key>
-
+<!-- 
     <key n="78">
       <name>N</name>
       <binding>
@@ -941,7 +799,7 @@
         <property>controls/signal8</property>
         <value>true</value>
       </binding>
-    </key>
+    </key> -->
 
 		</keyboard>
 	</input>
@@ -1056,6 +914,14 @@
 				<taxi type="bool">1</taxi>
 			</input>
 		</efis>
+
+        <!-- <lighting>
+            <instrument-lights type = "double">0.0</instrument-lights>
+            <panel type = "double">0.0</panel>
+            <nav-lights type = "double">0.0</nav-lights>
+            <strobe type = "double">0.0</strobe>
+            <beacon type = "double">0.0</beacon>
+        </lighting> -->
         
 	</instrumentation>
     
@@ -1097,10 +963,10 @@
 			<file>Aircraft/M-346/Nasal/liveries.nas</file>
 			<file>Aircraft/M-346/Nasal/refuel.nas</file>
 			<file>Aircraft/M-346/Nasal/explode.nas</file>
-			<file>Aircraft/M-346/Nasal/map.nas</file>
+                <file>Aircraft/M-346/Nasal/map.nas</file>
                 <file>Aircraft/M-346/Nasal/dialog.nas</file>
 		</M346>
-    
+
 		<dmesw>
 			<file>Aircraft/M-346/Nasal/dmesw.nas</file>
 		</dmesw>
