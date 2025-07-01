@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <name>Leonardo M-346 Master Payload</name>
+  <layout>vbox</layout>
+  <modal>false</modal>
+  <draggable>true</draggable>
+  <resizable>false</resizable>
+
+  <group>
+
+    <layout>hbox</layout>
+
+    <empty>
+      <stretch>false</stretch>
+    </empty>
+    <text>
+      <label>Leonardo M-346 Master Payload</label>
+    </text>
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend/>
+      <key>Esc</key>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <binding>
+        <command>nasal</command>
+        <script>M346.loads_dialog2.toggle()</script>
+      </binding>
+    </button>
+
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>table</layout>
+    <halign>center</halign>
+    <radio>
+      <row>0</row>
+      <col>0</col>
+      <halign>left</halign>
+      <name>Clean Configuration</name>
+      <property>/sim/model/empty-wings</property>
+      <live>true</live>
+      <label>Clean Configuration</label>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/hide-Racks</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var hidetanks = props.globals.getNode("sim/model/show-Tanks",1);
+          var wingstanks = hidetanks.getBoolValue();
+          if ( wingstanks == 1 ) {
+          setprop("consumables/fuel/tank[3]/selected",1);
+          setprop("consumables/fuel/tank[3]/level-gal_us",600);
+          setprop("sim/weight[1]/name","2000 lb L Left Droptank");
+          setprop("sim/weight[1]/weight-lb",2000);
+
+          setprop("consumables/fuel/tank[4]/selected",1);
+          setprop("consumables/fuel/tank[4]/level-gal_us",600);
+          setprop("sim/weight[2]/name","2000 lb R Right Droptank");
+          setprop("sim/weight[3]/weight-lb",2000);
+
+          } else {
+          setprop("consumables/fuel/tank[3]/selected",0);
+          setprop("consumables/fuel/tank[3]/level-gal_us",0);
+          setprop("sim/weight[1]/name","none");
+          setprop("sim/weight[1]/weight-lb",0);
+
+          setprop("consumables/fuel/tank[4]/selected",0);
+          setprop("consumables/fuel/tank[4]/level-gal_us",0);
+          setprop("sim/weight[2]/name","none");
+          setprop("sim/weight[2]/weight-lb",0);
+          }
+        </script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var hidetanks = props.globals.getNode("sim/model/show-TankC",1);
+          var wingstanks = hidetanks.getBoolValue();
+          if ( wingstanks == 1 ) {
+          setprop("consumables/fuel/tank[5]/selected",1);
+          setprop("consumables/fuel/tank[5]/level-gal_us",600);
+          setprop("sim/weight[3]/name","2000 lb Centerline Droptank");
+          setprop("sim/weight[3]/weight-lb",2000);
+          } else {
+          setprop("consumables/fuel/tank[5]/selected",0);
+          setprop("consumables/fuel/tank[5]/level-gal_us",0);
+          setprop("sim/weight[3]/name","none");
+          setprop("sim/weight[3]/weight-lb",0);
+          }
+        </script>
+      </binding>
+    </radio>
+
+    <radio>
+      <row>1</row>
+      <col>0</col>
+      <halign>left</halign>
+      <name>Armed Configuration</name>
+      <property>/sim/model/hide-Racks</property>
+      <live>true</live>
+      <label>Armed Configuration</label>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var hidetanks = props.globals.getNode("sim/model/show-Tanks",1);
+          var wingstanks = hidetanks.getBoolValue();
+          if ( wingstanks == 1 ) {
+          setprop("consumables/fuel/tank[3]/selected",1);
+          setprop("consumables/fuel/tank[3]/level-gal_us",600);
+          setprop("sim/weight[1]/name","2000 lb L Left Droptank");
+          setprop("sim/weight[1]/weight-lb",2000);
+
+          setprop("consumables/fuel/tank[4]/selected",1);
+          setprop("consumables/fuel/tank[4]/level-gal_us",600);
+          setprop("sim/weight[2]/name","2000 lb R Right Droptank");
+          setprop("sim/weight[3]/weight-lb",2000);
+
+          } else {
+          setprop("consumables/fuel/tank[3]/selected",0);
+          setprop("consumables/fuel/tank[3]/level-gal_us",0);
+          setprop("sim/weight[1]/name","none");
+          setprop("sim/weight[1]/weight-lb",0);
+
+          setprop("consumables/fuel/tank[4]/selected",0);
+          setprop("consumables/fuel/tank[4]/level-gal_us",0);
+          setprop("sim/weight[2]/name","none");
+          setprop("sim/weight[2]/weight-lb",0);
+          }
+        </script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var hidetanks = props.globals.getNode("sim/model/show-TankC",1);
+          var wingstanks = hidetanks.getBoolValue();
+          if ( wingstanks == 1 ) {
+          setprop("consumables/fuel/tank[5]/selected",1);
+          setprop("consumables/fuel/tank[5]/level-gal_us",600);
+          setprop("sim/weight[3]/name","2000 lb Centerline Droptank");
+          setprop("sim/weight[3]/weight-lb",2000);
+          } else {
+          setprop("consumables/fuel/tank[5]/selected",0);
+          setprop("consumables/fuel/tank[5]/level-gal_us",0);
+          setprop("sim/weight[3]/name","none");
+          setprop("sim/weight[3]/weight-lb",0);
+          }
+        </script>
+      </binding>
+    </radio>
+
+  </group>
+
+  <hrule/>
+
+  <group>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>AIM-9M Wingtip Rails</label>
+      <property>/sim/model/show-AIM9M-W</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-AIM9M-W</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>Cannon Pod</label>
+      <property>/sim/model/show-Cannon</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-Cannon</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Litening</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Sniper</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>AN-AAQ-28 Litening Targeting Pod</label>
+      <property>/sim/model/show-Litening</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-Litening</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Cannon</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Sniper</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>AN-AAQ-33 Sniper Targeting Pod</label>
+      <property>/sim/model/show-Sniper</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-Sniper</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Cannon</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Litening</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+  </group>
+
+  <hrule/>
+
+  <group>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>AIM-9M</label>
+      <property>/sim/model/show-AIM9M-E</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-AIM9M-E</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-MK82-E</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU12-E</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>MK-82</label>
+      <property>/sim/model/show-MK82-E</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-MK82-E</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU12-E</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM9M-E</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>GBU-12</label>
+      <property>/sim/model/show-GBU12-E</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-GBU12-E</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-MK82-E</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM9M-E</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+  <hrule/>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>AIM-9M</label>
+      <property>/sim/model/show-AIM9M-I</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-AIM9M-I</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-MK82-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU12-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-MK82-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>MK-82</label>
+      <property>/sim/model/show-MK82-I</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-MK82-I</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU12-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM9M-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>GBU-12</label>
+      <property>/sim/model/show-GBU12-I</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-GBU12-I</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-MK82-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM9M-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+  </group>
+
+  <hrule/>
+
+  <group>
+
+    <layout>vbox</layout>
+    <button>
+      <row>0</row>
+      <legend>RELOAD WEAPONS</legend>
+        <binding>
+          <command>nasal</command>
+          <script>
+          setprop("ai/submodels/AIM9W-number", 2);
+          setprop("controls/signal1", 0);
+          setprop("controls/signal2", 0);
+
+          setprop("ai/submodels/AIM9E-number", 2);
+          setprop("controls/signal10", 0);
+          setprop("controls/signal11", 0);
+
+          setprop("ai/submodels/AIM9I-number", 2);
+          setprop("controls/signal12", 0);
+          setprop("controls/signal13", 0);
+
+          setprop("ai/submodels/MK82E-number", 2);
+          setprop("controls/signal3", 0);
+          setprop("controls/signal4", 0);
+
+          setprop("ai/submodels/MK82I-number", 2);
+          setprop("controls/signal5", 0);
+          setprop("controls/signal6", 0);
+
+          setprop("ai/submodels/GBU12E-number", 2);
+          setprop("controls/signal14", 0);
+          setprop("controls/signal15", 0);
+
+          setprop("ai/submodels/GBU12I-number", 2);
+          setprop("controls/signal7", 0);
+          setprop("controls/signal8", 0);
+
+          </script>
+        </binding>
+
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (!getprop("gear/gear[0]/wow")) {
+            screen.log.write("This is only possible on ground.");
+            return;
+          }
+          if (getprop("gear/gear[0]/position-norm")) {
+            screen.log.write("Weapons Reloaded.");
+          }
+        </script>
+      </binding>
+    </button>
+
+  </group>
+
+</PropertyList>
