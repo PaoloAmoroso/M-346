@@ -42,7 +42,7 @@
     <collision>false</collision>
   </submodel>
 
-<!-- AIM-9M Missile Launch -->
+<!-- AIM-9M Wingtip Missile Launch -->
   <submodel>
     <name>AIM-9M-L</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
@@ -97,7 +97,7 @@
 
 <!-- MK. 82 Bomb Release -->
   <submodel>
-    <name>MK-82-2L</name>
+    <name>MK-82-1L</name>
     <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
     <trigger>controls/signal3</trigger>
     <speed-prop>
@@ -106,67 +106,11 @@
     <repeat>false</repeat>
     <delay>0.2</delay>
     <count>-1</count>
-    <offsets>
-	<x-m>  1.4539 </x-m>
-	<y-m> -3.0593 </y-m>
-	<z-m> -0.2225 </z-m>
-    </offsets>
-    <cd>0.295</cd>
-    <weight>500</weight>
-    <fuse-range>2.2</fuse-range>
-    <eda>0.61629</eda>
-    <life>1000</life>
-    <buoyancy>0</buoyancy>
-    <aero-stabilised>true</aero-stabilised>
-    <collision>true</collision>
-    <impact>true</impact>
-    <impact-reports>ai/models/model-impact</impact-reports>
-    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
-  </submodel>
-
-  <submodel>
-    <name>MK-82-2R</name>
-    <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
-    <trigger>controls/signal4</trigger>
-    <speed-prop>
-      <property>/velocities/airspeed-kt</property>
-    </speed-prop>
-    <repeat>false</repeat>
-    <delay>0.2</delay>
-    <count>-1</count>
-    <offsets>
-	<x-m>  1.4539 </x-m>
-	<y-m>  3.0593 </y-m>
-	<z-m> -0.2225 </z-m>
-    </offsets>
-    <cd>0.295</cd>
-    <weight>500</weight>
-    <fuse-range>2.2</fuse-range>
-    <eda>0.61629</eda>
-    <life>1000</life>
-    <buoyancy>0</buoyancy>
-    <aero-stabilised>true</aero-stabilised>
-    <collision>true</collision>
-    <impact>true</impact>
-    <impact-reports>ai/models/model-impact</impact-reports>
-    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
-  </submodel>
-
-  <submodel>
-    <name>MK-82-1L</name>
-    <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
-    <trigger>controls/signal5</trigger>
-    <speed-prop>
-      <property>/velocities/airspeed-kt</property>
-    </speed-prop>
-    <repeat>false</repeat>
-    <delay>0.2</delay>
-    <count>-1</count>
-    <offsets>
-	<x-m>  1.0618 </x-m>
-	<y-m> -2.0696 </y-m>
-	<z-m> -0.2389 </z-m>
-    </offsets>
+		<offsets>
+			<x-m>  1.3039 </x-m>
+			<y-m> -3.0593 </y-m>
+			<z-m> -0.2225 </z-m>
+		</offsets>
     <cd>0.295</cd>
     <weight>500</weight>
     <fuse-range>2.2</fuse-range>
@@ -183,6 +127,62 @@
   <submodel>
     <name>MK-82-1R</name>
     <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
+    <trigger>controls/signal4</trigger>
+    <speed-prop>
+      <property>/velocities/airspeed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+		<offsets>
+			<x-m>  1.3039 </x-m>
+			<y-m>  3.0593 </y-m>
+			<z-m> -0.2225 </z-m>
+		</offsets>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>MK-82-2L</name>
+    <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
+    <trigger>controls/signal5</trigger>
+    <speed-prop>
+      <property>/velocities/airspeed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+		<offsets>
+			<x-m>  1.0618 </x-m>
+			<y-m> -2.0696 </y-m>
+			<z-m> -0.2389 </z-m>
+		</offsets>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>MK-82-2R</name>
+    <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
     <trigger>controls/signal6</trigger>
     <speed-prop>
       <property>/velocities/airspeed-kt</property>
@@ -190,11 +190,11 @@
     <repeat>false</repeat>
     <delay>0.2</delay>
     <count>-1</count>
-    <offsets>
-	<x-m>  1.0618 </x-m>
-	<y-m>  2.0696 </y-m>
-	<z-m> -0.2389 </z-m>
-    </offsets>
+		<offsets>
+			<x-m>  1.0618 </x-m>
+			<y-m>  2.0696 </y-m>
+			<z-m> -0.2389 </z-m>
+		</offsets>
     <cd>0.295</cd>
     <weight>500</weight>
     <fuse-range>2.2</fuse-range>
@@ -210,7 +210,7 @@
 
 <!-- GBU-12 Bomb Release -->
   <submodel>
-    <name>GBU-12-L</name>
+    <name>GBU-12-2L</name>
     <model>Aircraft/M-346/Models/Payload/GBU-12.xml</model>
     <trigger>controls/signal7</trigger>
     <speed-prop>
@@ -219,11 +219,11 @@
     <repeat>false</repeat>
     <delay>0.2</delay>
     <count>-1</count>
-    <offsets>
-	<x-m>  0.51673 </x-m>
-	<y-m> -2.06550 </y-m>
-	<z-m> -0.24186 </z-m>
-    </offsets>
+		<offsets>
+			<x-m>  0.4209 </x-m>
+			<y-m> -2.0661 </y-m>
+			<z-m> -0.2514 </z-m>
+		</offsets>
     <cd>0.295</cd>
     <weight>500</weight>
     <fuse-range>2.2</fuse-range>
@@ -238,7 +238,7 @@
   </submodel>
 
   <submodel>
-    <name>GBU-12-R</name>
+    <name>GBU-12-2R</name>
     <model>Aircraft/M-346/Models/Payload/GBU-12.xml</model>
     <trigger>controls/signal8</trigger>
     <speed-prop>
@@ -247,11 +247,11 @@
     <repeat>false</repeat>
     <delay>0.2</delay>
     <count>-1</count>
-    <offsets>
-	<x-m>  0.51673 </x-m>
-	<y-m>  2.06550 </y-m>
-	<z-m> -0.24186 </z-m>
-    </offsets>
+		<offsets>
+			<x-m>  0.4209 </x-m>
+			<y-m>  2.0661 </y-m>
+			<z-m> -0.2514 </z-m>
+		</offsets>
     <cd>0.295</cd>
     <weight>500</weight>
     <fuse-range>2.2</fuse-range>
@@ -319,5 +319,194 @@
       <z-m> -1.1173 </z-m>
     </offsets>
   </submodel>
-	
+
+<!-- M-346 Master Block 20 Weapons -->
+
+<!-- AIM-9M Missile Launch -->
+  <submodel>
+    <name>AIM-9M-1L</name>
+    <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
+    <trigger>controls/signal10</trigger>
+    <speed>2720</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+		<offsets>
+			<x-m> 1.3083</x-m>
+			<y-m>-3.0645</y-m>
+			<z-m>-0.1610</z-m>
+		</offsets>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>AIM-9M-1R</name>
+    <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
+    <trigger>controls/signal11</trigger>
+    <speed>2720</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+		<offsets>
+			<x-m> 1.3083</x-m>
+			<y-m> 3.0645</y-m>
+			<z-m>-0.1610</z-m>
+		</offsets>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>AIM-9M-2L</name>
+    <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
+    <trigger>controls/signal12</trigger>
+    <speed>2720</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+		<offsets>
+			<x-m> 1.2033</x-m>
+			<y-m>-2.0652</y-m>
+			<z-m>-0.1860</z-m>
+		</offsets>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>AIM-9M-2R</name>
+    <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
+    <trigger>controls/signal13</trigger>
+    <speed>2720</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+		<offsets>
+			<x-m> 1.2033</x-m>
+			<y-m> 2.0652</y-m>
+			<z-m>-0.1860</z-m>
+		</offsets>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+<!-- GBU-12 Bomb Release -->
+  <bomb>
+    <model>Aircraft/M-346/Models/Payload/GBU-12.xml</model>
+    <speed-prop>
+      <property>velocities/airspeed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <life>1000</life>
+    <wind>false</wind>
+    <weight>500</weight>
+    <cd>0.295</cd>
+    <eda>0.61629</eda>
+    <fuse-range>2.2</fuse-range>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </bomb>
+
+  <submodel>
+    <name>GBU-12 release 1L (Block 20)</name>
+    <model            alias="../../bomb/model"/>
+    <trigger>controls/signal14</trigger>
+    <speed-prop       alias="../../bomb/speed-prop"/>
+    <repeat           alias="../../bomb/repeat"/>
+    <delay            alias="../../bomb/delay"/>
+    <count            alias="../../bomb/count"/>
+    <life             alias="../../bomb/life"/>
+    <wind             alias="../../bomb/wind"/>
+    <weight           alias="../../bomb/weight"/>
+    <cd               alias="../../bomb/cd"/>
+    <eda              alias="../../bomb/eda"/>
+    <fuse-range       alias="../../bomb/fuse-range"/>
+    <aero-stabilised  alias="../../bomb/aero-stabilised"/>
+    <collision        alias="../../bomb/collision"/>
+    <impact           alias="../../bomb/impact"/>
+    <impact-reports   alias="../../bomb/impact-reports"/>
+    <submodel-path    alias="../../bomb/submodel-path"/>
+		<offsets>
+			<x-m>  0.6726 </x-m>
+			<y-m> -3.0591 </y-m>
+			<z-m> -0.2367 </z-m>
+		</offsets>
+  </submodel>
+
+  <submodel>
+    <name>GBU-12 release 1R (Block 20)</name>
+    <model            alias="../../bomb/model"/>
+    <trigger>controls/signal15</trigger>
+    <speed-prop       alias="../../bomb/speed-prop"/>
+    <repeat           alias="../../bomb/repeat"/>
+    <delay            alias="../../bomb/delay"/>
+    <count            alias="../../bomb/count"/>
+    <life             alias="../../bomb/life"/>
+    <wind             alias="../../bomb/wind"/>
+    <weight           alias="../../bomb/weight"/>
+    <cd               alias="../../bomb/cd"/>
+    <eda              alias="../../bomb/eda"/>
+    <fuse-range       alias="../../bomb/fuse-range"/>
+    <aero-stabilised  alias="../../bomb/aero-stabilised"/>
+    <collision        alias="../../bomb/collision"/>
+    <impact           alias="../../bomb/impact"/>
+    <impact-reports   alias="../../bomb/impact-reports"/>
+    <submodel-path    alias="../../bomb/submodel-path"/>
+		<offsets>
+			<x-m>  0.6726 </x-m>
+			<y-m>  3.0591 </y-m>
+			<z-m> -0.2367 </z-m>
+		</offsets>
+  </submodel>
+
 </PropertyList>
