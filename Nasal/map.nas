@@ -359,6 +359,6 @@ var MAPCanvas = {
     #Other function like zoom in/out changing tile index, etc
 };
 
-var MapCanvas = m346.MAPCanvas.new({"node": "canvasCadre", "texture": "canvasTex.png"});
+var MapCanvas = M346.MAPCanvas.new({"node": "canvasCadre", "texture": "canvasTex.png"});
 
 MapCanvas.update();
