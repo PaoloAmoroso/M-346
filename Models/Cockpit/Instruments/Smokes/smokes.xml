@@ -21,7 +21,7 @@
       <property>/controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.5 </red>
       <green> 0.4 </green>
       <blue>  0.3 </blue>
@@ -35,7 +35,7 @@
       <property>/controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   2.00 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
@@ -49,7 +49,7 @@
       <property>/controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   2 </red>
       <green> 2 </green>
       <blue>  2 </blue>
@@ -63,7 +63,7 @@
       <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.25 </red>
       <green> 2.00 </green>
       <blue>  0.25 </blue>
