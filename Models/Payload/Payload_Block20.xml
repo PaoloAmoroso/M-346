@@ -1,0 +1,610 @@
+<PropertyList>
+
+  <!-- Leonardo M-346FT/FA Master WEAPONS -->
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-L</object-name>
+    <object-name>AIM-9M-R</object-name>
+    <object-name>AIM-9M-1L</object-name>
+    <object-name>AIM-9M-1R</object-name>
+    <object-name>AIM-9M-2L</object-name>
+    <object-name>AIM-9M-2R</object-name>
+    <object-name>MK-82-1L</object-name>
+    <object-name>MK-82-2L</object-name>
+    <object-name>MK-82-1R</object-name>
+    <object-name>MK-82-2R</object-name>
+    <object-name>GBU-12-1L</object-name>
+    <object-name>GBU-12-1R</object-name>
+    <object-name>GBU-12-2L</object-name>
+    <object-name>GBU-12-2R</object-name>
+    <object-name>Tank-L</object-name>
+    <object-name>Tank-C</object-name>
+    <object-name>Tank-R</object-name>
+    <object-name>Litening</object-name>
+    <object-name>Sniper</object-name>
+    <object-name>Cannon</object-name>
+    <condition>
+        <and>
+         <property>sim/model/hide-Racks</property>
+        </and>
+    </condition>
+  </animation>
+
+	<!-- Pylon 1L/1R - Pylon 1/7 Wingtip Left/Right -->
+	<model>
+		<name>AIM-9M-L</name>
+		<path>Aircraft/M-346/Models/Payload/AIM-9M.xml</path>
+		<offsets>
+			<x-m> 1.6699</x-m>
+			<y-m>-4.8815</y-m>
+			<z-m> 0.3094</z-m>
+			<roll-deg>270</roll-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>AIM-9M-R</name>
+		<path>Aircraft/M-346/Models/Payload/AIM-9M.xml</path>
+		<offsets>
+			<x-m>1.6699</x-m>
+			<y-m>4.8815</y-m>
+			<z-m>0.3094</z-m>
+			<roll-deg>90</roll-deg>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-L</object-name>
+    <object-name>AIM-9M-R</object-name>
+    <condition>
+      <property>sim/model/show-AIM9M-W</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-L</object-name>
+    <condition>
+    <property>sim/model/show-AIM9M-W</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/AIM9W-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/AIM9W-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-R</object-name>
+    <condition>
+      <property>sim/model/show-AIM9M-W</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/AIM9W-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/AIM9W-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+	<!-- Pylon 2L/2R - Pylon 2/6 Left/Right -->
+
+	<model>
+		<name>AIM-9M-1L</name>
+		<path>Aircraft/M-346/Models/Payload/AIM-9M.xml</path>
+		<offsets>
+			<x-m> 1.2066</x-m>
+			<y-m>-3.0645</y-m>
+			<z-m>-0.1610</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>AIM-9M-1R</name>
+		<path>Aircraft/M-346/Models/Payload/AIM-9M.xml</path>
+		<offsets>
+			<x-m> 1.2066</x-m>
+			<y-m> 3.0645</y-m>
+			<z-m>-0.1610</z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-1L</object-name>
+    <object-name>AIM-9M-1R</object-name>
+    <condition>
+      <property>sim/model/show-AIM9M-E</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-1L</object-name>
+    <condition>
+    <property>sim/model/show-AIM9M-E</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/AIM9E-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/AIM9E-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-1R</object-name>
+    <condition>
+      <property>sim/model/show-AIM9M-E</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/AIM9E-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/AIM9E-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+	<model>
+		<name>MK-82-1L</name>
+		<path>Aircraft/M-346/Models/Payload/MK-82.ac</path>
+		<offsets>
+			<x-m>  1.3039 </x-m>
+			<y-m> -3.0593 </y-m>
+			<z-m> -0.2225 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>MK-82-1R</name>
+		<path>Aircraft/M-346/Models/Payload/MK-82.ac</path>
+		<offsets>
+			<x-m>  1.3039 </x-m>
+			<y-m>  3.0593 </y-m>
+			<z-m> -0.2225 </z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>MK-82-1L</object-name>
+    <object-name>MK-82-1R</object-name>
+    <condition>
+      <property>sim/model/show-MK82-E</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>MK-82-1L</object-name>
+    <condition>
+    <property>sim/model/show-MK82-E</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/MK82E-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/MK82E-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>MK-82-1R</object-name>
+    <condition>
+      <property>sim/model/show-MK82-E</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/MK82E-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/MK82E-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+     <model>
+		<name>GBU-12-1L</name>
+		<path>Aircraft/M-346/Models/Payload/GBU-12.xml</path>
+		<offsets>
+			<x-m>  0.6726 </x-m>
+			<y-m> -3.0591 </y-m>
+			<z-m> -0.2367 </z-m>
+		</offsets>
+	</model>
+
+     <model>
+		<name>GBU-12-1R</name>
+		<path>Aircraft/M-346/Models/Payload/GBU-12.xml</path>
+		<offsets>
+			<x-m>  0.6726 </x-m>
+			<y-m>  3.0591 </y-m>
+			<z-m> -0.2367 </z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>GBU-12-1L</object-name>
+    <object-name>GBU-12-1R</object-name>
+    <condition>
+      <property>sim/model/show-GBU12-E</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GBU-12-1L</object-name>
+    <condition>
+    <property>sim/model/show-GBU12-E</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/GBU12E-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/GBU12E-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GBU-12-1R</object-name>
+    <condition>
+      <property>sim/model/show-GBU12-E</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/GBU12E-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/GBU12E-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+	<!-- Pylon 3L/3R - Pylon 3/5 Left/Right -->
+	<model>
+		<name>AIM-9M-2L</name>
+		<path>Aircraft/M-346/Models/Payload/AIM-9M.xml</path>
+		<offsets>
+			<x-m> 0.7781</x-m>
+			<y-m>-2.0652</y-m>
+			<z-m>-0.1860</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>AIM-9M-2R</name>
+		<path>Aircraft/M-346/Models/Payload/AIM-9M.xml</path>
+		<offsets>
+			<x-m> 0.7781</x-m>
+			<y-m> 2.0652</y-m>
+			<z-m>-0.1860</z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-2L</object-name>
+    <object-name>AIM-9M-2R</object-name>
+    <condition>
+      <property>sim/model/show-AIM9M-I</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-2L</object-name>
+    <condition>
+    <property>sim/model/show-AIM9M-I</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/AIM9I-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/AIM9I-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AIM-9M-2R</object-name>
+    <condition>
+      <property>sim/model/show-AIM9M-I</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/AIM9I-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/AIM9I-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+	<model>
+		<name>MK-82-2L</name>
+		<path>Aircraft/M-346/Models/Payload/MK-82.ac</path>
+		<offsets>
+			<x-m>  1.0618 </x-m>
+			<y-m> -2.0696 </y-m>
+			<z-m> -0.2389 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>MK-82-2R</name>
+		<path>Aircraft/M-346/Models/Payload/MK-82.ac</path>
+		<offsets>
+			<x-m>  1.0618 </x-m>
+			<y-m>  2.0696 </y-m>
+			<z-m> -0.2389 </z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>MK-82-2L</object-name>
+    <condition>
+    <property>sim/model/show-MK82-I</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/MK82I-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/MK82I-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>MK-82-2R</object-name>
+    <condition>
+      <property>sim/model/show-MK82-I</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/MK82I-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/MK82I-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+     <model>
+		<name>GBU-12-2L</name>
+		<path>Aircraft/M-346/Models/Payload/GBU-12.xml</path>
+		<offsets>
+			<x-m>  0.4209 </x-m>
+			<y-m> -2.0661 </y-m>
+			<z-m> -0.2514 </z-m>
+		</offsets>
+	</model>
+
+     <model>
+		<name>GBU-12-2R</name>
+		<path>Aircraft/M-346/Models/Payload/GBU-12.xml</path>
+		<offsets>
+			<x-m>  0.4209 </x-m>
+			<y-m>  2.0661 </y-m>
+			<z-m> -0.2514 </z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>GBU-12-2L</object-name>
+    <object-name>GBU-12-2R</object-name>
+    <condition>
+      <property>sim/model/show-GBU12-I</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GBU-12-2L</object-name>
+    <condition>
+    <property>sim/model/show-GBU12-I</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/GBU12I-number</property>
+          <value>1</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/GBU12I-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GBU-12-2R</object-name>
+    <condition>
+      <property>sim/model/show-GBU12-I</property>
+      <or>
+        <greater-than>
+          <property>ai/submodels/GBU12I-number</property>
+          <value>0</value>
+        </greater-than>
+        <equals>
+          <property>ai/submodels/GBU12I-number</property>
+          <value>-1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+<!--
+	<model>
+		<name>Tank-L</name>
+		<path>Aircraft/M-346/Models/Payload/Tank.xml</path>
+		<offsets>
+			<x-m>  0.74473 </x-m>
+			<y-m> -2.06500 </y-m>
+			<z-m> -0.26702 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Tank-R</name>
+		<path>Aircraft/M-346/Models/Payload/Tank.xml</path>
+		<offsets>
+			<x-m>  0.74473 </x-m>
+			<y-m> -2.06500 </y-m>
+			<z-m> -0.26702 </z-m>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>tank-L</object-name>
+    <object-name>tank-R</object-name>
+    <condition>
+      <property>sim/model/show-Tanks</property>
+    </condition>
+  </animation>
+
+-->
+
+	<!-- Centerline Pylon - Pylon 4 -->
+<!--
+     <model>
+		<name>Tank-C</name>
+		<path>Aircraft/M-346/Models/Payload/Tank.xml</path>
+		<offsets>
+			<x-m>  0.3154 </x-m>
+			<y-m>  0.0000 </y-m>
+			<z-m> -0.9142 </z-m>
+		</offsets>
+	</model>
+	
+  <animation>
+    <type>select</type>
+    <object-name>tank-C</object-name>
+    <condition>
+      <property>sim/model/show-TankC</property>
+    </condition>
+  </animation>
+-->
+     <model>
+		<name>Litening</name>
+		<path>Aircraft/M-346/Models/Payload/AN-AAQ-28.ac</path>
+		<offsets>
+			<x-m> 0.4037</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.9471</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Litening</object-name>
+    <condition>
+      <property>sim/model/show-Litening</property>
+    </condition>
+  </animation>
+
+     <model>
+		<name>Sniper</name>
+		<path>Aircraft/M-346/Models/Payload/AN-AAQ-33.ac</path>
+		<offsets>
+			<x-m> 0.0879</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.9000</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Sniper</object-name>
+    <condition>
+      <property>sim/model/show-Sniper</property>
+    </condition>
+  </animation>
+
+	<model>
+		<name>Cannon</name>
+		<path>Aircraft/M-346/Models/Payload/Cannon.ac</path>
+	</model>
+	
+  <animation>
+    <type>select</type>
+    <object-name>Cannon</object-name>
+    <condition>
+      <property>sim/model/show-Cannon</property>
+    </condition>
+  </animation>
+			
+	<!-- Pylon 3R - Pylon 5 -->
+     <!-- 
+	<model>
+		<name>Tank-R</name>
+		<path>Aircraft/M-346/Models/Payload/Tank.xml</path>
+		<offsets>
+			<x-m>  0.74473 </x-m>
+			<y-m>  2.06500 </y-m>
+			<z-m> -0.26702 </z-m>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Tank-R</object-name>
+		<condition>
+		     <equals>
+			 <property>sim/weight[2]/selected</property>
+			 <value>Tank</value>
+			</equals>
+		</condition>
+	</animation> -->
+					
+</PropertyList>
