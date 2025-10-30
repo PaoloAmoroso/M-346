@@ -393,6 +393,10 @@
 				<name>m</name>
 				<desc>Pylon 3 | 5</desc>
 			</key>
+			<key>
+				<name>R</name>
+				<desc>Auxiliary Tanks Jettison</desc>
+			</key>
                 <key>
                      <name>Q</name>
                      <desc>Reset View</desc>
@@ -452,6 +456,7 @@
                 <path>/sim/model/show-MK82-I</path>
                 <path>/sim/model/show-GBU12-E</path>
                 <path>/sim/model/show-GBU12-I</path>
+                <path>/sim/model/show-Brimstone</path>
                 <path>/sim/model/show-Cannon</path>
                 <path>/sim/model/show-Litening</path>
                 <path>/sim/model/show-Sniper</path>
@@ -510,17 +515,18 @@
 	</consumables>
 
      <ai>
-           <submodels>
-                     <AIM9W-number type="int">2</AIM9W-number>
-                     <AIM9E-number type="int">2</AIM9E-number>
-                     <AIM9I-number type="int">2</AIM9I-number>
-                     <GBU12E-number type="int">2</GBU12E-number>
-                     <GBU12I-number type="int">2</GBU12I-number>
-                     <MK82E-number type="int">2</MK82E-number>
-                     <MK82I-number type="int">2</MK82I-number>
-                     <Tanks-number type="int">2</Tanks-number>
-                     <TankC-number type="int">2</TankC-number>
-           </submodels>
+         <submodels>
+             <AIM9W-number type="int">2</AIM9W-number>
+             <AIM9E-number type="int">2</AIM9E-number>
+             <AIM9I-number type="int">2</AIM9I-number>
+             <GBU12E-number type="int">2</GBU12E-number>
+             <GBU12I-number type="int">2</GBU12I-number>
+             <MK82E-number type="int">2</MK82E-number>
+             <MK82I-number type="int">2</MK82I-number>
+             <Brimstone-number type="int">6</Brimstone-number>
+             <Tanks-number type="int">2</Tanks-number>
+             <TankC-number type="int">1</TankC-number>
+         </submodels>
      </ai>
 
 	<!-- Keyboard shortcuts -->
@@ -596,6 +602,31 @@
       </mod-up>
     </key>
 
+    <key n="82">
+      <name>R</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/Tanks</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-Tanks</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/TankC</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-TankC</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+    </key>
 
 <key n="69">
   <name>Shift+e</name>
@@ -682,6 +713,23 @@
         }
       }
 
+      # Brimstone
+            if ((getprop("/sim/model/show-Brimstone")) and !getprop("/sim/launching-Brimstone")) {
+        var BrimstoneCount = getprop("ai/submodels/Brimstone-number");
+        if (BrimstoneCount > 0 and BrimstoneCount <= 6) {
+          setprop("/sim/launching-Brimstone", 1);
+
+          var triggerPath = "/controls/signal" ~ (22 - BrimstoneCount); #(22 - 6) = 16 allora "signal16" a (22 - 1) = 21 allora "signal21"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/Brimstone-number", BrimstoneCount - 1);
+            setprop("/sim/launching-Brimstone", 0);
+          }, 0.3);
+        }
+      }
+
     ]]></script>
   </binding>
     </key>
@@ -764,43 +812,6 @@
 		          </mod-up>
 	          </key>
 
-<!-- 
-    <key n="78">
-      <name>N</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal5</property>
-        <value>true</value>
-      </binding>
-    </key>
-
-    <key n="77">
-      <name>M</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal6</property>
-        <value>true</value>
-      </binding>
-    </key>
-
-    <key n="106">
-      <name>j</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal7</property>
-        <value>true</value>
-      </binding>
-    </key>
-
-    <key n="107">
-      <name>k</name>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/signal8</property>
-        <value>true</value>
-      </binding>
-    </key> -->
-
 		</keyboard>
 	</input>
     
@@ -831,7 +842,7 @@
 		</comm>
         
 		<airspeed-indicator>
-			<limit-indicated-speed-kt type="double">280</limit-indicated-speed-kt>	
+			<limit-indicated-speed-kt type="double">900</limit-indicated-speed-kt>	
 			<index n="0" type="double">95</index>
 			<index n="1" type="double">145</index>
 		</airspeed-indicator>
