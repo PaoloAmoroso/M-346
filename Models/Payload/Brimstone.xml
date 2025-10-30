@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>Brimstone.ac</path>
+
+  <animation>
+    <object-name>Brimstone_A</object-name>
+    <object-name>Brimstone_B</object-name>
+    <object-name>Brimstone_C</object-name>
+    <object-name>Brimstone_D</object-name>
+  </animation>
+
+</PropertyList>
