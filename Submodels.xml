@@ -320,7 +320,7 @@
     </offsets>
   </submodel>
 
-<!-- M-346 Master Block 20 Weapons -->
+<!-- M-346F Master Block 20 Weapons -->
 
 <!-- AIM-9M Missile Launch -->
   <submodel>
@@ -506,6 +506,282 @@
 			<x-m>  0.6726 </x-m>
 			<y-m>  3.0591 </y-m>
 			<z-m> -0.2367 </z-m>
+		</offsets>
+  </submodel>
+
+<!-- Brimstone Launch -->
+  <rocket>
+    <model>Aircraft/M-346/Models/Payload/Brimstone.xml</model>
+    <speed>2720</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <life>1000</life>
+    <wind>false</wind>
+    <weight>500</weight>
+    <cd>0.295</cd>
+    <eda>0.61629</eda>
+    <fuse-range>2.2</fuse-range>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </rocket>
+
+  <submodel>
+    <name>Brimstone 1L</name>
+    <model            alias="../../rocket/model"/>
+    <trigger>controls/signal18</trigger>
+    <speed            alias="../../rocket/speed"/>
+    <repeat           alias="../../rocket/repeat"/>
+    <delay            alias="../../rocket/delay"/>
+    <count            alias="../../rocket/count"/>
+    <life             alias="../../rocket/life"/>
+    <wind             alias="../../rocket/wind"/>
+    <weight           alias="../../rocket/weight"/>
+    <cd               alias="../../rocket/cd"/>
+    <eda              alias="../../rocket/eda"/>
+    <fuse-range       alias="../../rocket/fuse-range"/>
+    <aero-stabilised  alias="../../rocket/aero-stabilised"/>
+    <collision        alias="../../rocket/collision"/>
+    <impact           alias="../../rocket/impact"/>
+    <impact-reports   alias="../../rocket/impact-reports"/>
+    <submodel-path    alias="../../rocket/submodel-path"/>
+    <offsets>
+      <x-m>  1.28010 </x-m>
+      <y-m> -3.34140 </y-m>
+      <z-m> -0.31501 </z-m>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>Brimstone 1C</name>
+    <model            alias="../../rocket/model"/>
+    <trigger>controls/signal16</trigger>
+    <speed            alias="../../rocket/speed"/>
+    <repeat           alias="../../rocket/repeat"/>
+    <delay            alias="../../rocket/delay"/>
+    <count            alias="../../rocket/count"/>
+    <life             alias="../../rocket/life"/>
+    <wind             alias="../../rocket/wind"/>
+    <weight           alias="../../rocket/weight"/>
+    <cd               alias="../../rocket/cd"/>
+    <eda              alias="../../rocket/eda"/>
+    <fuse-range       alias="../../rocket/fuse-range"/>
+    <aero-stabilised  alias="../../rocket/aero-stabilised"/>
+    <collision        alias="../../rocket/collision"/>
+    <impact           alias="../../rocket/impact"/>
+    <impact-reports   alias="../../rocket/impact-reports"/>
+    <submodel-path    alias="../../rocket/submodel-path"/>
+    <offsets>
+      <x-m>  1.16690 </x-m>
+      <y-m> -3.06200 </y-m>
+      <z-m> -0.35303 </z-m>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>Brimstone 1R</name>
+    <model            alias="../../rocket/model"/>
+    <trigger>controls/signal20</trigger>
+    <speed            alias="../../rocket/speed"/>
+    <repeat           alias="../../rocket/repeat"/>
+    <delay            alias="../../rocket/delay"/>
+    <count            alias="../../rocket/count"/>
+    <life             alias="../../rocket/life"/>
+    <wind             alias="../../rocket/wind"/>
+    <weight           alias="../../rocket/weight"/>
+    <cd               alias="../../rocket/cd"/>
+    <eda              alias="../../rocket/eda"/>
+    <fuse-range       alias="../../rocket/fuse-range"/>
+    <aero-stabilised  alias="../../rocket/aero-stabilised"/>
+    <collision        alias="../../rocket/collision"/>
+    <impact           alias="../../rocket/impact"/>
+    <impact-reports   alias="../../rocket/impact-reports"/>
+    <submodel-path    alias="../../rocket/submodel-path"/>
+    <offsets>
+      <x-m>  1.28010 </x-m>
+      <y-m> -2.78200 </y-m>
+      <z-m> -0.31501 </z-m>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>Brimstone 2L</name>
+    <model            alias="../../rocket/model"/>
+    <trigger>controls/signal21</trigger>
+    <speed            alias="../../rocket/speed"/>
+    <repeat           alias="../../rocket/repeat"/>
+    <delay            alias="../../rocket/delay"/>
+    <count            alias="../../rocket/count"/>
+    <life             alias="../../rocket/life"/>
+    <wind             alias="../../rocket/wind"/>
+    <weight           alias="../../rocket/weight"/>
+    <cd               alias="../../rocket/cd"/>
+    <eda              alias="../../rocket/eda"/>
+    <fuse-range       alias="../../rocket/fuse-range"/>
+    <aero-stabilised  alias="../../rocket/aero-stabilised"/>
+    <collision        alias="../../rocket/collision"/>
+    <impact           alias="../../rocket/impact"/>
+    <impact-reports   alias="../../rocket/impact-reports"/>
+    <submodel-path    alias="../../rocket/submodel-path"/>
+    <offsets>
+      <x-m>  1.28010 </x-m>
+      <y-m>  3.34140 </y-m>
+      <z-m> -0.31501 </z-m>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>Brimstone 2C</name>
+    <model            alias="../../rocket/model"/>
+    <trigger>controls/signal117</trigger>
+    <speed            alias="../../rocket/speed"/>
+    <repeat           alias="../../rocket/repeat"/>
+    <delay            alias="../../rocket/delay"/>
+    <count            alias="../../rocket/count"/>
+    <life             alias="../../rocket/life"/>
+    <wind             alias="../../rocket/wind"/>
+    <weight           alias="../../rocket/weight"/>
+    <cd               alias="../../rocket/cd"/>
+    <eda              alias="../../rocket/eda"/>
+    <fuse-range       alias="../../rocket/fuse-range"/>
+    <aero-stabilised  alias="../../rocket/aero-stabilised"/>
+    <collision        alias="../../rocket/collision"/>
+    <impact           alias="../../rocket/impact"/>
+    <impact-reports   alias="../../rocket/impact-reports"/>
+    <submodel-path    alias="../../rocket/submodel-path"/>
+    <offsets>
+      <x-m>  1.16690 </x-m>
+      <y-m>  3.06200 </y-m>
+      <z-m> -0.35303 </z-m>
+    </offsets>
+  </submodel>
+
+  <submodel>
+    <name>Brimstone 2R</name>
+    <model            alias="../../rocket/model"/>
+    <trigger>controls/signal19</trigger>
+    <speed            alias="../../rocket/speed"/>
+    <repeat           alias="../../rocket/repeat"/>
+    <delay            alias="../../rocket/delay"/>
+    <count            alias="../../rocket/count"/>
+    <life             alias="../../rocket/life"/>
+    <wind             alias="../../rocket/wind"/>
+    <weight           alias="../../rocket/weight"/>
+    <cd               alias="../../rocket/cd"/>
+    <eda              alias="../../rocket/eda"/>
+    <fuse-range       alias="../../rocket/fuse-range"/>
+    <aero-stabilised  alias="../../rocket/aero-stabilised"/>
+    <collision        alias="../../rocket/collision"/>
+    <impact           alias="../../rocket/impact"/>
+    <impact-reports   alias="../../rocket/impact-reports"/>
+    <submodel-path    alias="../../rocket/submodel-path"/>
+    <offsets>
+      <x-m>  1.28010 </x-m>
+      <y-m>  2.78200 </y-m>
+      <z-m> -0.31501 </z-m>
+    </offsets>
+  </submodel>
+
+<!-- Auxiliary Tank Release -->
+  <tanks>
+    <model>Aircraft/M-346/Models/Payload/Tank.xml</model>
+    <speed-prop>
+      <property>velocities/airspeed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <life>1000</life>
+    <wind>false</wind>
+    <weight>500</weight>
+    <cd>0.295</cd>
+    <eda>0.61629</eda>
+    <fuse-range>2.2</fuse-range>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/M-346/Models/Payload/Impact/bomb-impact.xml</submodel-path>
+  </tanks>
+
+  <submodel>
+    <name>Tank L (Block 20)</name>
+    <model            alias="../../tanks/model"/>
+    <trigger>controls/Tanks</trigger>
+    <speed-prop       alias="../../tanks/speed-prop"/>
+    <repeat           alias="../../tanks/repeat"/>
+    <delay            alias="../../tanks/delay"/>
+    <count            alias="../../tanks/count"/>
+    <life             alias="../../tanks/life"/>
+    <wind             alias="../../tanks/wind"/>
+    <weight           alias="../../tanks/weight"/>
+    <cd               alias="../../tanks/cd"/>
+    <eda              alias="../../tanks/eda"/>
+    <fuse-range       alias="../../tanks/fuse-range"/>
+    <aero-stabilised  alias="../../tanks/aero-stabilised"/>
+    <collision        alias="../../tanks/collision"/>
+    <impact           alias="../../tanks/impact"/>
+    <impact-reports   alias="../../tanks/impact-reports"/>
+    <submodel-path    alias="../../tanks/submodel-path"/>
+		<offsets>
+			<x-m>  0.74473 </x-m>
+			<y-m> -2.06500 </y-m>
+			<z-m> -0.26702 </z-m>
+		</offsets>
+  </submodel>
+
+  <submodel>
+    <name>Tank R (Block 20)</name>
+    <model            alias="../../tanks/model"/>
+    <trigger>controls/Tanks</trigger>
+    <speed-prop       alias="../../tanks/speed-prop"/>
+    <repeat           alias="../../tanks/repeat"/>
+    <delay            alias="../../tanks/delay"/>
+    <count            alias="../../tanks/count"/>
+    <life             alias="../../tanks/life"/>
+    <wind             alias="../../tanks/wind"/>
+    <weight           alias="../../tanks/weight"/>
+    <cd               alias="../../tanks/cd"/>
+    <eda              alias="../../tanks/eda"/>
+    <fuse-range       alias="../../tanks/fuse-range"/>
+    <aero-stabilised  alias="../../tanks/aero-stabilised"/>
+    <collision        alias="../../tanks/collision"/>
+    <impact           alias="../../tanks/impact"/>
+    <impact-reports   alias="../../tanks/impact-reports"/>
+    <submodel-path    alias="../../tanks/submodel-path"/>
+		<offsets>
+			<x-m>  0.74473 </x-m>
+			<y-m>  2.06500 </y-m>
+			<z-m> -0.26702 </z-m>
+		</offsets>
+  </submodel>
+
+  <submodel>
+    <name>Tank C (Block 20)</name>
+    <model            alias="../../tanks/model"/>
+    <trigger>controls/TankC</trigger>
+    <speed-prop       alias="../../tanks/speed-prop"/>
+    <repeat           alias="../../tanks/repeat"/>
+    <delay            alias="../../tanks/delay"/>
+    <count            alias="../../tanks/count"/>
+    <life             alias="../../tanks/life"/>
+    <wind             alias="../../tanks/wind"/>
+    <weight           alias="../../tanks/weight"/>
+    <cd               alias="../../tanks/cd"/>
+    <eda              alias="../../tanks/eda"/>
+    <fuse-range       alias="../../tanks/fuse-range"/>
+    <aero-stabilised  alias="../../tanks/aero-stabilised"/>
+    <collision        alias="../../tanks/collision"/>
+    <impact           alias="../../tanks/impact"/>
+    <impact-reports   alias="../../tanks/impact-reports"/>
+    <submodel-path    alias="../../tanks/submodel-path"/>
+		<offsets>
+			<x-m>  0.3154 </x-m>
+			<y-m>  0.0000 </y-m>
+			<z-m> -0.9142 </z-m>
 		</offsets>
   </submodel>
 
