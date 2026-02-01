@@ -44,7 +44,7 @@
 
 <!-- AIM-9M Wingtip Missile Launch -->
   <submodel>
-    <name>AIM-9M-L</name>
+    <name>AIM-9M-L missile</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
     <trigger>controls/signal1</trigger>
     <speed>2720</speed>
@@ -70,7 +70,7 @@
   </submodel>
 
   <submodel>
-    <name>AIM-9M-R</name>
+    <name>AIM-9M-R missile</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
     <trigger>controls/signal2</trigger>
     <speed>2720</speed>
@@ -97,7 +97,7 @@
 
 <!-- MK. 82 Bomb Release -->
   <submodel>
-    <name>MK-82-1L</name>
+    <name>MK-82-1L bomb</name>
     <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
     <trigger>controls/signal3</trigger>
     <speed-prop>
@@ -125,7 +125,7 @@
   </submodel>
 
   <submodel>
-    <name>MK-82-1R</name>
+    <name>MK-82-1R bomb</name>
     <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
     <trigger>controls/signal4</trigger>
     <speed-prop>
@@ -153,7 +153,7 @@
   </submodel>
 
   <submodel>
-    <name>MK-82-2L</name>
+    <name>MK-82-2L bomb</name>
     <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
     <trigger>controls/signal5</trigger>
     <speed-prop>
@@ -181,7 +181,7 @@
   </submodel>
 
   <submodel>
-    <name>MK-82-2R</name>
+    <name>MK-82-2R bomb</name>
     <model>Aircraft/M-346/Models/Payload/MK-82.xml</model>
     <trigger>controls/signal6</trigger>
     <speed-prop>
@@ -210,7 +210,7 @@
 
 <!-- GBU-12 Bomb Release -->
   <submodel>
-    <name>GBU-12-2L</name>
+    <name>GBU-12-2L bomb</name>
     <model>Aircraft/M-346/Models/Payload/GBU-12.xml</model>
     <trigger>controls/signal7</trigger>
     <speed-prop>
@@ -238,7 +238,7 @@
   </submodel>
 
   <submodel>
-    <name>GBU-12-2R</name>
+    <name>GBU-12-2R bomb</name>
     <model>Aircraft/M-346/Models/Payload/GBU-12.xml</model>
     <trigger>controls/signal8</trigger>
     <speed-prop>
@@ -324,7 +324,7 @@
 
 <!-- AIM-9M Missile Launch -->
   <submodel>
-    <name>AIM-9M-1L</name>
+    <name>AIM-9M-1L missile</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
     <trigger>controls/signal10</trigger>
     <speed>2720</speed>
@@ -352,7 +352,7 @@
   </submodel>
 
   <submodel>
-    <name>AIM-9M-1R</name>
+    <name>AIM-9M-1R missile</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
     <trigger>controls/signal11</trigger>
     <speed>2720</speed>
@@ -380,7 +380,7 @@
   </submodel>
 
   <submodel>
-    <name>AIM-9M-2L</name>
+    <name>AIM-9M-2L missile</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
     <trigger>controls/signal12</trigger>
     <speed>2720</speed>
@@ -408,7 +408,7 @@
   </submodel>
 
   <submodel>
-    <name>AIM-9M-2R</name>
+    <name>AIM-9M-2R missile</name>
     <model>Aircraft/M-346/Models/Payload/AIM-9M.xml</model>
     <trigger>controls/signal13</trigger>
     <speed>2720</speed>
