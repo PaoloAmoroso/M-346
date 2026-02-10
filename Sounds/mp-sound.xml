@@ -578,6 +578,24 @@
       <max-dist>1000</max-dist>
     </flare>
 
+    <gun>
+      <name>Gun</name>
+      <mode>looped</mode>
+      <path>gunfire.wav</path>
+      <condition>
+        <and>
+          <property>controls/armament/trigger</property>
+        </and>
+      </condition>
+      <position>
+        <x> -5.363 </x>
+        <y> -0.125 </y>
+        <z>  0.414 </z>
+      </position>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gun>
+
     <rocket-single>
       <name>rocket-singleL</name>
       <mode>once</mode>
