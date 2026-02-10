@@ -279,7 +279,6 @@
 			</config>
 		</view>
 	
-	
 		<view n="102">
 			<name>Over the shoulder</name>
 			<internal archive="y">false</internal>
@@ -427,20 +426,6 @@
           </script>
         </binding>
         </item>
-					<!-- <item>
-						<label>Reload Cannon</label>
-						<binding>
-							<command>nasal</command>
-							<script>cannon.reload()</script>
-						</binding>
-					</item>
-					<item>
-						<label>Reload Rockets</label>
-						<binding>
-							<command>nasal</command>
-							<script>rockets.reload()</script>
-						</binding>
-					</item> -->
 					<item>
 						<label>Toggle ammo reports</label>
 						<binding>
@@ -521,6 +506,7 @@
 				<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat left engine -->
 				<float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat right engine -->
                       <!-- For Bombable -->
+                      <string n="9" type="string"/>
                       <int n="10" type="int" alias="controls/armament/trigger">0</int>
 			</generic>
 		</multiplay>
@@ -557,10 +543,6 @@
 				<name>MK-82</name>
 				<lbs>531</lbs>
 			</opt>
-                <!-- <opt>
-				<name>BL-13 rockets</name>
-				<lbs>600</lbs>
-			</opt> -->
 		</weight>	
     
 		<weight n="2">
@@ -651,10 +633,6 @@
 				<name>MK-82</name>
 				<lbs>531</lbs>
 			</opt>
-			<!-- <opt>
-				<name>BL-13 rockets</name>
-				<lbs>600</lbs>
-			</opt> -->
 		</weight>
     
 		<weight n="6">
@@ -1116,10 +1094,6 @@
 		<eno>
 			<file>Aircraft/M-346/Nasal/eno.nas</file>
 		</eno>
-    
-		<!-- <maintenance>
-			<file>Aircraft/M-346/Nasal/maintenance.nas</file>
-		</maintenance> -->
     
 		<yasimengines>
 			<file>Aircraft/M-346/Nasal/yasim-engines.nas</file>

@@ -276,7 +276,6 @@
 			</config>
 		</view>
 	
-	
 		<view n="102">
 			<name>Over the shoulder</name>
 			<internal archive="y">false</internal>
@@ -436,7 +435,6 @@
                       <!-- For Bombable -->
                       <int n="10" type="int" alias="controls/armament/trigger">0</int>
                       <string n="9"  type="string"/>
-
 			</generic>
 		</multiplay>
     
@@ -993,10 +991,6 @@
 		<eno>
 			<file>Aircraft/M-346/Nasal/eno.nas</file>
 		</eno>
-    
-		<!-- <maintenance>
-			<file>Aircraft/M-346/Nasal/maintenance.nas</file>
-		</maintenance> -->
     
 		<yasimengines>
 			<file>Aircraft/M-346/Nasal/yasim-engines.nas</file>

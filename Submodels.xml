@@ -284,7 +284,6 @@
     <expiry>true</expiry>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <impact-reports>sim/ai/aircraft/collision/cannon</impact-reports>
     <submodel-path>Aircraft/M-346/Models/Payload/Cannon/Cannon/bullet-submodel.xml</submodel-path>
     <yaw-offset>0</yaw-offset>
     <pitch-offset>0</pitch-offset>
