@@ -1029,7 +1029,7 @@
 		</radardist>
     
 		<radar>
-			<file>Aircraft/M-346/Nasal/radar.nas</file> 
+			<file>Aircraft/M-346/Nasal/Radar.nas</file> 
 		</radar>
     
 		<radar2>
