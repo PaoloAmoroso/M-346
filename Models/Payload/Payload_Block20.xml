@@ -23,8 +23,16 @@
     <object-name>Brimstone-2L</object-name>
     <object-name>Brimstone-2C</object-name>
     <object-name>Brimstone-2R</object-name>
-    <object-name>TriRack-L</object-name>
-    <object-name>TriRack-R</object-name>
+    <object-name>Brimstone-3L</object-name>
+    <object-name>Brimstone-3C</object-name>
+    <object-name>Brimstone-3R</object-name>
+    <object-name>Brimstone-4L</object-name>
+    <object-name>Brimstone-4C</object-name>
+    <object-name>Brimstone-4R</object-name>
+    <object-name>TriRack-1L</object-name>
+    <object-name>TriRack-1R</object-name>
+    <object-name>TriRack-2L</object-name>
+    <object-name>TriRack-2R</object-name>
     <object-name>Tank-L</object-name>
     <object-name>Tank-C</object-name>
     <object-name>Tank-R</object-name>
@@ -304,7 +312,7 @@
   </animation>
 
   <model>
-    <name>TriRack-L</name>
+    <name>TriRack-1L</name>
     <path>TriRack.xml</path>
     <offsets>
       <x-m>  1.9092 </x-m>
@@ -314,7 +322,7 @@
   </model>
 
   <model>
-    <name>TriRack-R</name>
+    <name>TriRack-1R</name>
     <path>TriRack.xml</path>
     <offsets>
       <x-m>  1.9092 </x-m>
@@ -385,8 +393,8 @@
 
   <animation>
     <type>select</type>
-    <object-name>TriRack-L</object-name>
-    <object-name>TriRack-R</object-name>
+    <object-name>TriRack-1L</object-name>
+    <object-name>TriRack-1R</object-name>
     <object-name>Brimstone-1L</object-name>
     <object-name>Brimstone-1C</object-name>
     <object-name>Brimstone-1R</object-name>
@@ -394,7 +402,7 @@
     <object-name>Brimstone-2C</object-name>
     <object-name>Brimstone-2R</object-name>
     <condition>
-      <property>sim/model/show-Brimstone</property>
+      <property>sim/model/show-BrimstoneE</property>
     </condition>
   </animation> 
 
@@ -403,7 +411,7 @@
   <object-name>Brimstone-1C</object-name>
   <condition>
     <greater-than>
-      <property>ai/submodels/Brimstone-number</property>
+      <property>ai/submodels/BrimstoneE-number</property>
       <value>5</value>
     </greater-than>
   </condition>
@@ -414,7 +422,7 @@
   <object-name>Brimstone-2C</object-name>
   <condition>
     <greater-than>
-      <property>ai/submodels/Brimstone-number</property>
+      <property>ai/submodels/BrimstoneE-number</property>
       <value>4</value>
     </greater-than>
   </condition>
@@ -425,7 +433,7 @@
   <object-name>Brimstone-1L</object-name>
   <condition>
     <greater-than>
-      <property>ai/submodels/Brimstone-number</property>
+      <property>ai/submodels/BrimstoneE-number</property>
       <value>3</value>
     </greater-than>
   </condition>
@@ -436,7 +444,7 @@
   <object-name>Brimstone-2L</object-name>
   <condition>
     <greater-than>
-      <property>ai/submodels/Brimstone-number</property>
+      <property>ai/submodels/BrimstoneE-number</property>
       <value>2</value>
     </greater-than>
   </condition>
@@ -447,7 +455,7 @@
   <object-name>Brimstone-1R</object-name>
   <condition>
     <greater-than>
-      <property>ai/submodels/Brimstone-number</property>
+      <property>ai/submodels/BrimstoneE-number</property>
       <value>1</value>
     </greater-than>
   </condition>
@@ -458,7 +466,7 @@
   <object-name>Brimstone-2R</object-name>
   <condition>
     <greater-than>
-      <property>ai/submodels/Brimstone-number</property>
+      <property>ai/submodels/BrimstoneE-number</property>
       <value>0</value>
     </greater-than>
   </condition>
@@ -650,6 +658,167 @@
       </or>
     </condition>
   </animation>
+
+  <model>
+    <name>TriRack-2L</name>
+    <path>TriRack.xml</path>
+    <offsets>
+      <x-m>  1.3467 </x-m>
+      <y-m> -2.0675 </y-m>
+      <z-m> -0.1590 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>TriRack-2R</name>
+    <path>TriRack.xml</path>
+    <offsets>
+      <x-m>  1.3467 </x-m>
+      <y-m>  2.0675 </y-m>
+      <z-m> -0.1590 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Brimstone-3L</name>
+    <path>Brimstone.xml</path>
+    <offsets>
+      <x-m>  0.71761 </x-m>
+      <y-m> -2.34500 </y-m>
+      <z-m> -0.32867 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Brimstone-3C</name>
+    <path>Brimstone.xml</path>
+    <offsets>
+      <x-m>  0.60440 </x-m>
+      <y-m> -2.06560 </y-m>
+      <z-m> -0.36669 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Brimstone-3R</name>
+    <path>Brimstone.xml</path>
+    <offsets>
+      <x-m>  0.71761 </x-m>
+      <y-m> -1.78560 </y-m>
+      <z-m> -0.32867 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Brimstone-4L</name>
+    <path>Brimstone.xml</path>
+    <offsets>
+      <x-m>  0.71761 </x-m>
+      <y-m>  2.34500 </y-m>
+      <z-m> -0.32867 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Brimstone-4C</name>
+    <path>Brimstone.xml</path>
+    <offsets>
+      <x-m>  0.60440 </x-m>
+      <y-m>  2.06560 </y-m>
+      <z-m> -0.36669 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Brimstone-4R</name>
+    <path>Brimstone.xml</path>
+    <offsets>
+      <x-m>  0.71761 </x-m>
+      <y-m>  1.78560 </y-m>
+      <z-m> -0.32867 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TriRack-2L</object-name>
+    <object-name>TriRack-2R</object-name>
+    <object-name>Brimstone-3L</object-name>
+    <object-name>Brimstone-3C</object-name>
+    <object-name>Brimstone-3R</object-name>
+    <object-name>Brimstone-4L</object-name>
+    <object-name>Brimstone-4C</object-name>
+    <object-name>Brimstone-4R</object-name>
+    <condition>
+      <property>sim/model/show-BrimstoneI</property>
+    </condition>
+  </animation> 
+
+<animation>
+  <type>select</type>
+  <object-name>Brimstone-3C</object-name>
+  <condition>
+    <greater-than>
+      <property>ai/submodels/BrimstoneI-number</property>
+      <value>5</value>
+    </greater-than>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>Brimstone-4C</object-name>
+  <condition>
+    <greater-than>
+      <property>ai/submodels/BrimstoneI-number</property>
+      <value>4</value>
+    </greater-than>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>Brimstone-3L</object-name>
+  <condition>
+    <greater-than>
+      <property>ai/submodels/BrimstoneI-number</property>
+      <value>3</value>
+    </greater-than>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>Brimstone-4L</object-name>
+  <condition>
+    <greater-than>
+      <property>ai/submodels/BrimstoneI-number</property>
+      <value>2</value>
+    </greater-than>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>Brimstone-3R</object-name>
+  <condition>
+    <greater-than>
+      <property>ai/submodels/BrimstoneI-number</property>
+      <value>1</value>
+    </greater-than>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>Brimstone-4R</object-name>
+  <condition>
+    <greater-than>
+      <property>ai/submodels/BrimstoneI-number</property>
+      <value>0</value>
+    </greater-than>
+  </condition>
+</animation>
 
 	<model>
 		<name>Tank-L</name>
