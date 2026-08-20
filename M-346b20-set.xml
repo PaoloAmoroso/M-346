@@ -454,7 +454,8 @@
                 <path>/sim/model/show-MK82-I</path>
                 <path>/sim/model/show-GBU12-E</path>
                 <path>/sim/model/show-GBU12-I</path>
-                <path>/sim/model/show-Brimstone</path>
+                <path>/sim/model/show-BrimstoneE</path>
+                <path>/sim/model/show-BrimstoneI</path>
                 <path>/sim/model/show-Cannon</path>
                 <path>/sim/model/show-Litening</path>
                 <path>/sim/model/show-Sniper</path>
@@ -521,7 +522,8 @@
              <GBU12I-number type="int">2</GBU12I-number>
              <MK82E-number type="int">2</MK82E-number>
              <MK82I-number type="int">2</MK82I-number>
-             <Brimstone-number type="int">6</Brimstone-number>
+             <BrimstoneE-number type="int">6</BrimstoneE-number>
+             <BrimstoneI-number type="int">6</BrimstoneI-number>
              <Tanks-number type="int">2</Tanks-number>
              <TankC-number type="int">1</TankC-number>
          </submodels>
@@ -711,19 +713,19 @@
         }
       }
 
-      # Brimstone
-            if ((getprop("/sim/model/show-Brimstone")) and !getprop("/sim/launching-Brimstone")) {
-        var BrimstoneCount = getprop("ai/submodels/Brimstone-number");
-        if (BrimstoneCount > 0 and BrimstoneCount <= 6) {
-          setprop("/sim/launching-Brimstone", 1);
+      # Brimstone External Pylons
+            if ((getprop("/sim/model/show-BrimstoneE")) and !getprop("/sim/launching-BrimstoneE")) {
+        var BrimstoneECount = getprop("ai/submodels/BrimstoneE-number");
+        if (BrimstoneECount > 0 and BrimstoneECount <= 6) {
+          setprop("/sim/launching-BrimstoneE", 1);
 
-          var triggerPath = "/controls/signal" ~ (22 - BrimstoneCount); #(22 - 6) = 16 allora "signal16" a (22 - 1) = 21 allora "signal21"
+          var triggerPath = "/controls/signal" ~ (22 - BrimstoneECount); #(22 - 6) = 16 allora "signal16" a (22 - 1) = 21 allora "signal21"
           setprop(triggerPath, 1);
 
           settimer(func() { setprop(triggerPath, 0); }, 0.2);
           settimer(func() {
-            setprop("ai/submodels/Brimstone-number", BrimstoneCount - 1);
-            setprop("/sim/launching-Brimstone", 0);
+            setprop("ai/submodels/BrimstoneE-number", BrimstoneECount - 1);
+            setprop("/sim/launching-BrimstoneE", 0);
           }, 0.3);
         }
       }
@@ -785,6 +787,23 @@
           settimer(func() {
             setprop("ai/submodels/GBU12I-number", GBU12ICount - 1);
             setprop("/sim/launching-GBU12I", 0);
+          }, 0.3);
+        }
+      }
+
+      # Brimstone Internal Pylons
+            if ((getprop("/sim/model/show-BrimstoneI")) and !getprop("/sim/launching-BrimstoneI")) {
+        var BrimstoneICount = getprop("ai/submodels/BrimstoneI-number");
+        if (BrimstoneICount > 0 and BrimstoneICount <= 6) {
+          setprop("/sim/launching-BrimstoneI", 1);
+
+          var triggerPath = "/controls/signal" ~ (28 - BrimstoneICount); #(28 - 6) = 22 allora "signal22" a (28 - 1) = 27 allora "signal22"
+          setprop(triggerPath, 1);
+
+          settimer(func() { setprop(triggerPath, 0); }, 0.2);
+          settimer(func() {
+            setprop("ai/submodels/BrimstoneI-number", BrimstoneICount - 1);
+            setprop("/sim/launching-BrimstoneI", 0);
           }, 0.3);
         }
       }
