@@ -379,7 +379,7 @@
       </binding>
       <binding>
         <command>property-assign</command>
-        <property>/sim/model/show-Brimstone</property>
+        <property>/sim/model/show-BrimstoneE</property>
         <value>0</value>
       </binding>
       <binding>
@@ -424,7 +424,7 @@
       </binding>
       <binding>
         <command>property-assign</command>
-        <property>/sim/model/show-Brimstone</property>
+        <property>/sim/model/show-BrimstoneE</property>
         <value>0</value>
       </binding>
       <binding>
@@ -469,7 +469,7 @@
       </binding>
       <binding>
         <command>property-assign</command>
-        <property>/sim/model/show-Brimstone</property>
+        <property>/sim/model/show-BrimstoneE</property>
         <value>0</value>
       </binding>
       <binding>
@@ -495,11 +495,11 @@
     <checkbox>
       <halign>left</halign>
       <label>Brimstone</label>
-      <property>/sim/model/show-Brimstone</property>
+      <property>/sim/model/show-BrimstoneE</property>
       <live>true</live>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/model/show-Brimstone</property>
+        <property>/sim/model/show-BrimstoneE</property>
         <value>1</value>
       </binding>
       <binding>
@@ -566,6 +566,11 @@
       </binding>
       <binding>
         <command>property-assign</command>
+        <property>/sim/model/show-BrimstoneI</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
         <property>sim/model/show-Tanks</property>
         <value>0</value>
       </binding>
@@ -607,6 +612,11 @@
       <binding>
         <command>property-assign</command>
         <property>/sim/model/show-AIM9M-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-BrimstoneI</property>
         <value>0</value>
       </binding>
       <binding>
@@ -656,7 +666,62 @@
       </binding>
       <binding>
         <command>property-assign</command>
+        <property>/sim/model/show-BrimstoneI</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
         <property>sim/model/show-Tanks</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/empty-wings</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/hide-Racks</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </checkbox>
+
+    <layout>vbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>Brimstone</label>
+      <property>/sim/model/show-BrimstoneI</property>
+      <live>true</live>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/show-BrimstoneI</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-MK82-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU12-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM9M-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-Tanks</property>
         <value>0</value>
       </binding>
       <binding>
@@ -702,6 +767,11 @@
       <binding>
         <command>property-assign</command>
         <property>/sim/model/show-AIM9M-I</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-BrimstoneI</property>
         <value>0</value>
       </binding>
       <binding>
@@ -763,13 +833,21 @@
           setprop("controls/signal7", 0);
           setprop("controls/signal8", 0);
 
-          setprop("ai/submodels/Brimstone-number", 6);
+          setprop("ai/submodels/BrimstoneE-number", 6);
           setprop("controls/signal16", 0);
           setprop("controls/signal17", 0);
           setprop("controls/signal18", 0);
           setprop("controls/signal19", 0);
           setprop("controls/signal20", 0);
           setprop("controls/signal21", 0);
+
+          setprop("ai/submodels/BrimstoneI-number", 6);
+          setprop("controls/signal22", 0);
+          setprop("controls/signal23", 0);
+          setprop("controls/signal24", 0);
+          setprop("controls/signal25", 0);
+          setprop("controls/signal26", 0);
+          setprop("controls/signal27", 0);
 
           </script>
         </binding>
@@ -784,6 +862,7 @@
         <property>controls/TankC</property>
         <value>0</value>
       </binding>
+
       <binding>
         <command>nasal</command>
         <script>
