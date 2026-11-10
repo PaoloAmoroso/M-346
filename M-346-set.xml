@@ -426,13 +426,13 @@
           </script>
         </binding>
         </item>
-					<item>
+					<!-- item>
 						<label>Toggle ammo reports</label>
 						<binding>
 							<command>property-toggle</command>
 							<property>/controls/armament/report-ammo</property>
 						</binding>
-					</item>
+					</item -->
 				</menu>
 			</default>
 		</menubar>
@@ -962,15 +962,14 @@
 		</g-meter>
         
 		<radar>
-			<range type="int" archive="y">20</range>
+ 			<mode type="int">0</mode>
+			<range type="double" archive="y">20</range>
+ 			<display-mode type="string">ARC</display-mode>
+
 			<range-factor type="double" archive="n">0.001888</range-factor>
 			<minimized type="bool" archive="y">false</minimized>
-			<selected type="int">3</selected>
 			<enabled type="bool">true</enabled>
 			<az-field type="double">120</az-field>
-			<range type="double">150</range>
-			<range-selected type="double">50</range-selected>
-			<radar2-range type="double">150</radar2-range>
 			<display-rdr type="bool">true</display-rdr>
 			<radar-standby type="int">3</radar-standby>
 			<mode>

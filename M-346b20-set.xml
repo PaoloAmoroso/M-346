@@ -316,7 +316,7 @@
                                 <label>Lights</label>
                                 <binding>
                                      <command>nasal</command>
-                                     <script>m346.lights_dialog1.toggle()</script>
+                                     <script>M346.lights_dialog1.toggle()</script>
                                 </binding>
                            </item>
                            <item>
@@ -337,13 +337,6 @@
                                      <property>sim/model/hide-FA</property>
                                 </binding>
                            </item>
-      <item>
-        <label>External Lights</label>
-        <binding>
-          <command>nasal</command>
-          <script>M346.lights_dialog1.toggle()</script>
-        </binding>
-      </item>
 
                            <item>
         <label>--- M-346 Weapons ---</label>
@@ -870,15 +863,14 @@
 		</g-meter>
         
 		<radar>
-			<range type="int" archive="y">20</range>
+ 			<mode type="int">0</mode>
+			<range type="double" archive="y">20</range>
+ 			<display-mode type="string">ARC</display-mode>
+
 			<range-factor type="double" archive="n">0.001888</range-factor>
 			<minimized type="bool" archive="y">false</minimized>
-			<selected type="int">3</selected>
 			<enabled type="bool">true</enabled>
 			<az-field type="double">120</az-field>
-			<range type="double">150</range>
-			<range-selected type="double">50</range-selected>
-			<radar2-range type="double">150</radar2-range>
 			<display-rdr type="bool">true</display-rdr>
 			<radar-standby type="int">3</radar-standby>
 			<mode>
@@ -926,7 +918,7 @@
 			<nd>
 				<display-mode type="string">VOR</display-mode>
 				<display-mode-knob type="int">2</display-mode-knob>
-				<display-range type="int">40</display-range>
+				<!-- <display-range type="int">40</display-range> -->
 			</nd>
 			<input>
 				<vor-adf-1 type="int">1</vor-adf-1>
@@ -1042,11 +1034,7 @@
 		<m877>
 			<file>Aircraft/Instruments-3d/clock/m877/M877.nas</file>
 		</m877>
-    
-		<radardist>
-			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
-		</radardist>
-    
+        
 		<radar>
 			<file>Aircraft/M-346/Nasal/Radar.nas</file> 
 		</radar>
