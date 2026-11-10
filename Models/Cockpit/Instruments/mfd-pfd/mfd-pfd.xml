@@ -33,13 +33,29 @@
     <object-name>knobL</object-name>
     <object-name>knobs</object-name>
     <object-name>knobR</object-name>
-    <object-name>Radar</object-name>
+    <object-name>Radar_A</object-name>
+    <object-name>Radar_T</object-name>
+    <object-name>Radar_G</object-name>
 
     <emission>
       <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.40 </green>
       <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>GND</object-name>
+    <object-name>TWS</object-name>
+    <object-name>RNG</object-name>
+    <object-name>RNG_1</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.20 </red>
+      <green> 0.60 </green>
+      <blue>  0.40 </blue>
     </emission>
   </animation>
 
@@ -149,8 +165,8 @@
 <!-- Map/Radar Mode -->
 
   <model>
-    <name>Radar</name>
-    <path>Aircraft/M-346/Models/Cockpit/Instruments/Radar/nd.xml</path>
+    <name>Radar_A</name>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/Radar/ND/nd.xml</path>
     <offsets>
       <z-m>  0.00400 </z-m>
     </offsets>
@@ -165,46 +181,104 @@
     </overlay>
   </model>
 
+  <model>
+    <name>Radar_T</name>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/Radar/TWS/TWS.xml</path>
+    <offsets>
+      <x-m> -0.046002 </x-m>
+      <y-m>  0.020528 </y-m>
+      <z-m> -0.017469 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="all">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 1.3 </x-offset>
+        <y-offset> 1.3 </y-offset>
+        <z-offset> 1.3 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <model>
+    <name>Radar_G</name>
+    <path>Aircraft/M-346/Models/Cockpit/Instruments/Radar/SAR/SAR.xml</path>
+    <offsets>
+      <x-m> -0.046002 </x-m>
+      <y-m>  0.020528 </y-m>
+      <z-m> -0.017469 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="all">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 1.3 </x-offset>
+        <y-offset> 1.3 </y-offset>
+        <z-offset> 1.3 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
   <animation>
     <type>select</type>
     <object-name>canvasCadre</object-name>
     <condition>
-      <not><property>instrumentation/radar/mode</property></not>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>Radar</object-name>
-    <condition>
+     <equals>
       <property>instrumentation/radar/mode</property>
+      <value>0</value>
+     </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Radar_A</object-name>
+    <condition>
+     <equals>
+      <property>instrumentation/radar/mode</property>
+      <value>1</value>
+     </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Radar_T</object-name>
+    <object-name>TWS</object-name>
+    <condition>
+     <equals>
+      <property>instrumentation/radar/mode</property>
+      <value>2</value>
+     </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Radar_G</object-name>
+    <object-name>GND</object-name>
+    <condition>
+     <equals>
+      <property>instrumentation/radar/mode</property>
+      <value>3</value>
+     </equals>
     </condition>
   </animation>
 
   <animation>
     <type>pick</type>
     <visible>true</visible>
-    <object-name>canvasCadre</object-name>
+    <object-name>knobs</object-name>
     <action>
       <button>0</button>
-      <repeatable>false</repeatable>
+      <repeatable>true</repeatable>
       <binding>
-        <command>property-toggle</command>
-        <property>instrumentation/radar/mode</property>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>Radar</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-toggle</command>
-        <property>instrumentation/radar/mode</property>
+        <command>property-adjust</command>
+        <property>/instrumentation/radar/mode</property>
+        <step> 1 </step>
+        <min>  0 </min>
+        <max>  4 </max>
+        <wrap>true</wrap>
       </binding>
     </action>
   </animation>
@@ -246,5 +320,155 @@
       <z>  0 </z>
     </axis>
   </animation>
+
+  <!-- RADAR MODE TEXT -->
+
+  <text>
+    <name>GND</name>
+    <font>lucida.txf</font>
+    <character-size type="double">0.01</character-size>
+    <offsets>
+      <x-m>  0.003947 </x-m>
+      <y-m> -0.097967 </y-m>
+      <z-m>  0.052524 </z-m>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">literal</type>
+    <text type="string">GND</text>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-center</alignment>
+  </text>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>GND</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script><![CDATA[
+          var mode = getprop("/instrumentation/radar/display-mode");
+
+          if (mode == "ARC") {
+            setprop("/instrumentation/radar/display-mode", "NOARC");
+          } else {
+            setprop("/instrumentation/radar/display-mode", "ARC");
+          }
+        ]]></script>
+      </binding>
+    </action>
+  </animation>
+
+  <text>
+    <name>TWS</name>
+    <font>lucida.txf</font>
+    <character-size type="double">0.01</character-size>
+    <offsets>
+      <x-m>  0.003947 </x-m>
+      <y-m> -0.097967 </y-m>
+      <z-m>  0.052524 </z-m>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">literal</type>
+    <text type="string">TWS</text>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-center</alignment>
+  </text>
+
+  <animation>
+    <type>pick</type>
+    <object-name>TWS</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/radar/air-to-air</property>
+        <step> 1 </step>
+        <min>  0 </min>
+        <max>  4 </max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <text>
+    <name>RNG</name>
+    <font>lucida.txf</font>
+    <character-size type="double">0.01</character-size>
+    <offsets>
+      <x-m>  0.003947 </x-m>
+      <y-m> -0.097967 </y-m>
+      <z-m>  0.028560 </z-m>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">literal</type>
+    <text type="string">RNG</text>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-center</alignment>
+  </text>
+
+  <animation>
+    <type>pick</type>
+    <object-name>RNG</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-cycle</command>
+        <property>instrumentation/radar[0]/range</property>
+        <value type="float">5</value>
+        <value type="float">10</value>
+        <value type="float">20</value>
+        <value type="float">40</value>
+        <value type="float">80</value>
+        <!-- <value type="float">160</value>
+        <value type="float">320</value>
+        <value type="float">640</value> -->
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <text>
+    <name>RNG_1</name>
+    <font>lucida.txf</font>
+    <character-size type="double">0.01</character-size>
+    <offsets>
+      <x-m>  0.003947 </x-m>
+      <y-m> -0.097967 </y-m>
+      <z-m>  0.015816 </z-m>
+    </offsets>
+    <axis-alignment>yz-plane</axis-alignment>
+    <type>string</type>
+    <format type="string">%s NM</format>
+    <property>instrumentation/radar[0]/range</property>
+    <draw-text type="bool">true</draw-text>
+    <alignment>left-center</alignment>
+  </text>
+
+<animation>
+  <type>select</type>
+  <object-name>RNG</object-name>
+  <object-name>RNG_1</object-name>
+  <condition>
+    <not>
+      <or>
+        <equals>
+          <property>instrumentation/radar/mode</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>instrumentation/radar/mode</property>
+          <value>1</value>
+        </equals>
+      </or>
+    </not>
+  </condition>
+</animation>
 
 </PropertyList>

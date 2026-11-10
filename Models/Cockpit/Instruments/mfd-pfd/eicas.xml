@@ -11,6 +11,7 @@
   <animation>
     <object-name>EICAS.face</object-name>
     <object-name>LH-N1</object-name>
+    <object-name>RH-N1</object-name>
     <object-name>LH-ITT</object-name>
     <object-name>Flapneedle</object-name>
     <object-name>STABneedle</object-name>
@@ -79,6 +80,7 @@
     <type>noshadow</type>
     <object-name>EICAS.face</object-name>
     <object-name>LH-N1</object-name>
+    <object-name>RH-N1</object-name>
     <object-name>LH-ITT</object-name>
     <object-name>Flapneedle</object-name>
     <object-name>STABneedle</object-name>
@@ -147,6 +149,7 @@
     <type>material</type>
     <object-name>EICAS.face</object-name>
     <object-name>LH-N1</object-name>
+    <object-name>RH-N1</object-name>
     <object-name>LH-ITT</object-name>
     <object-name>Flapneedle</object-name>
     <object-name>STABneedle</object-name>
@@ -297,7 +300,8 @@
     <type>translate</type>
     <object-name>oiltemp1</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/oilt-norm</property>
     <interpolation>
@@ -315,9 +319,10 @@
     <type>translate</type>
     <object-name>oiltemp3</object-name>
     <condition>
-      <not><property>/controls/engines/engine[2]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
-    <property>engines/engine[2]/oilt-norm</property>
+    <property>engines/engine[1]/oilt-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.020 </dep></entry>
@@ -333,7 +338,8 @@
     <type>translate</type>
     <object-name>oiltemp2</object-name>
     <condition>
-      <not><property>/controls/engines/engine[1]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[1]/oilt-norm</property>
     <interpolation>
@@ -351,7 +357,8 @@
     <type>translate</type>
     <object-name>oilpsi1</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/oilp-norm</property>
     <interpolation>
@@ -369,9 +376,10 @@
     <type>translate</type>
     <object-name>oilpsi3</object-name>
     <condition>
-      <not><property>/controls/engines/engine[2]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
-    <property>engines/engine[2]/oilp-norm</property>
+    <property>engines/engine[1]/oilp-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.0190 </dep></entry>
@@ -387,7 +395,8 @@
     <type>translate</type>
     <object-name>oilpsi2</object-name>
     <condition>
-      <not><property>/controls/engines/engine[1]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[1]/oilp-norm</property>
     <interpolation>
@@ -405,7 +414,32 @@
     <type>textranslate</type>
     <object-name>LH-N1</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
+    </condition>
+    <property>engines/engine[0]/n1</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0.00000 </dep></entry>
+      <entry><ind>  30 </ind><dep> -0.00622 </dep></entry>
+      <entry><ind>  50 </ind><dep> -0.03167 </dep></entry>
+      <entry><ind>  70 </ind><dep> -0.05769</dep></entry>
+      <entry><ind>  90 </ind><dep> -0.08484 </dep></entry>
+      <entry><ind> 100 </ind><dep> -0.11000 </dep></entry>
+      <entry><ind> 105 </ind><dep> -0.12800 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>RH-N1</object-name>
+    <condition>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n1</property>
     <interpolation>
@@ -428,7 +462,8 @@
     <type>textranslate</type>
     <object-name>LH-ITT</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/itt-norm</property>
     <interpolation>
@@ -447,7 +482,8 @@
     <type>textranslate</type>
     <object-name>LHn2-2</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n2</property>
     <factor>0.01</factor>
@@ -463,7 +499,8 @@
     <type>textranslate</type>
     <object-name>LHn2-1</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n2</property>
     <factor>0.1</factor>
@@ -480,7 +517,8 @@
     <type>textranslate</type>
     <object-name>LHn1-4</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n1</property>
     <factor>0.001</factor>
@@ -496,7 +534,8 @@
     <type>textranslate</type>
     <object-name>LHn1-3</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n1</property>
     <factor>0.01</factor>
@@ -512,7 +551,8 @@
     <type>textranslate</type>
     <object-name>LHn1-2</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n1</property>
     <factor>0.1</factor>
@@ -528,7 +568,8 @@
     <type>textranslate</type>
     <object-name>LHn1-1</object-name>
     <condition>
-      <not><property>/controls/engines/engine[0]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[0]/n1</property>
     <factor>1.0</factor>
@@ -544,7 +585,8 @@
     <type>textranslate</type>
     <object-name>CHn1-4</object-name>
     <condition>
-      <not><property>/controls/engines/engine[2]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[2]/n1</property>
     <factor>0.001</factor>
@@ -560,7 +602,8 @@
     <type>textranslate</type>
     <object-name>CHn1-3</object-name>
     <condition>
-      <not><property>/controls/engines/engine[2]/cutoff</property></not>
+      <!-- <not><property>/controls/engines/engine[0]/cutoff</property>
+      </not> -->
     </condition>
     <property>engines/engine[2]/n1</property>
     <factor>0.01</factor>
