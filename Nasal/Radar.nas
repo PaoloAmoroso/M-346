@@ -1,7 +1,7 @@
 # ===============================================================
 #                   Air and Terrain Mode Radar
 #                    for Leonardo M-346 Master
-#                     AMOROSO Paolo 06/2026
+#                      AMOROSO Paolo 11/2026
 # ===============================================================
 MPjoin = func(n) {
   var base = n.getValue();
@@ -392,3 +392,329 @@ setlistener("sim/signals/fdm-initialized", func {
     FL_loop();
     FL_syncLoop();
 });
+
+#================================================================
+#                 AIR-TO-AIR TWS SLEW RADAR
+#================================================================
+
+var AA_ROWS = 31;
+var AA_COLS = 31;
+
+var AA_UPDATE_PERIOD = 0.50;
+
+var AA_FOV_AZ_DEG = 60.0;
+var AA_FOV_EL_DEG = 30.0;
+
+var AA_MODEL_CATEGORIES = [
+    "aircraft",
+    "multiplayer",
+    "tanker",
+    "carrier",
+    "ship",
+    "groundvehicle",
+    "escort",
+    "ballistic"
+];
+
+var AA_PREVIOUS = [];
+var AA_RUNNING = 0;
+
+var AA_nodeValue = func(model, path) {
+
+    var node = model.getNode(path);
+
+    if (node == nil) return nil;
+
+    return node.getValue();
+};
+
+var AA_get = func(path, defaultValue) {
+
+    var value = getprop(path);
+
+    if (value == nil) return defaultValue;
+
+    return value;
+};
+
+var AA_init = func {
+
+    AA_PREVIOUS = [];
+
+    for (var i = 0; i < AA_ROWS * AA_COLS; i += 1) {
+
+        var row = math.floor(i / AA_COLS);
+        var col = i - row * AA_COLS;
+
+        var path = "/instrumentation/radar/air-to-air/pixels/row[" ~ row ~
+                   "]/col[" ~ col ~ "]/target-distance";
+
+        setprop(path, 0);
+
+        append(AA_PREVIOUS, 0);
+    }
+};
+
+var AA_update = func {
+
+    if (!AA_RUNNING) return;
+
+    var nextValues = [];
+    var nearest = [];
+
+    for (var i = 0; i < AA_ROWS * AA_COLS; i += 1) {
+
+        append(nextValues, 0);
+        append(nearest, 1.0e20);
+    }
+
+    var ownLat = AA_get("/position/latitude-deg", nil);
+    var ownLon = AA_get("/position/longitude-deg", nil);
+    var ownAlt = AA_get("/position/altitude-ft", nil);
+
+    var heading = AA_get("/orientation/heading-deg", 0);
+    var pitch = AA_get("/orientation/pitch-deg", 0);
+    var roll = AA_get("/orientation/roll-deg", 0);
+
+    var antennaHeading = AA_get(
+        "/instrumentation/radar/air-to-air/heading-deg", 0);
+
+    var antennaTilt = AA_get(
+        "/instrumentation/radar/air-to-air/tilt-deg", 0);
+
+    var radarRange = AA_get("/instrumentation/radar[0]/range", 80);
+
+
+    if (ownLat == nil or ownLon == nil or ownAlt == nil or radarRange <= 0) {
+
+        settimer(AA_update, AA_UPDATE_PERIOD);
+
+        return;
+    }
+
+    var d2r = math.pi / 180.0;
+
+    var psi = heading * d2r;
+    var theta = pitch * d2r;
+    var phi = roll * d2r;
+
+    var antAz = antennaHeading * d2r;
+    var antEl = antennaTilt * d2r;
+
+    var fN = math.cos(theta) * math.cos(psi);
+    var fE = math.cos(theta) * math.sin(psi);
+    var fU = math.sin(theta);
+
+    var rN0 = -math.sin(psi);
+    var rE0 =  math.cos(psi);
+    var rU0 = 0;
+
+    var uN0 = -math.sin(theta) * math.cos(psi);
+    var uE0 = -math.sin(theta) * math.sin(psi);
+    var uU0 =  math.cos(theta);
+
+    var rN = math.cos(phi) * rN0 - math.sin(phi) * uN0;
+    var rE = math.cos(phi) * rE0 - math.sin(phi) * uE0;
+    var rU = math.cos(phi) * rU0 - math.sin(phi) * uU0;
+
+    var uN = math.sin(phi) * rN0 + math.cos(phi) * uN0;
+    var uE = math.sin(phi) * rE0 + math.cos(phi) * uE0;
+    var uU = math.sin(phi) * rU0 + math.cos(phi) * uU0;
+
+    var bF = [
+        math.cos(antEl) * math.cos(antAz),
+        math.cos(antEl) * math.sin(antAz),
+        math.sin(antEl)
+    ];
+
+    var bR = [
+        -math.sin(antAz),
+         math.cos(antAz),
+         0
+    ];
+
+    var bU = [
+        -math.sin(antEl) * math.cos(antAz),
+        -math.sin(antEl) * math.sin(antAz),
+         math.cos(antEl)
+    ];
+
+    var latFactor = 60.0;
+    var lonFactor = 60.0 * math.cos(ownLat * d2r);
+
+    var feetPerNM = 6076.11549;
+
+    var AA_modelsFound = 0;
+    var AA_modelsValid = 0;
+    var AA_modelsPosition = 0;
+    var AA_modelsInRange = 0;
+    var AA_modelsInFOV = 0;
+
+    var root = props.globals.getNode("/ai/models");
+
+    if (root != nil) {
+
+        foreach (var category; AA_MODEL_CATEGORIES) {
+
+            var models = root.getChildren(category);
+
+            foreach (var model; models) {
+
+                AA_modelsFound += 1;
+
+                var valid = AA_nodeValue(model, "valid");
+
+                if (valid != nil and valid == 0) continue;
+
+                AA_modelsValid += 1;
+
+                var targetLat = AA_nodeValue(
+                    model, "position/latitude-deg");
+
+                var targetLon = AA_nodeValue(
+                    model, "position/longitude-deg");
+
+                var targetAlt = AA_nodeValue(
+                    model, "position/altitude-ft");
+
+
+                if (targetLat == nil or
+                    targetLon == nil or
+                    targetAlt == nil) continue;
+
+                AA_modelsPosition += 1;
+
+                var deltaLat = targetLat - ownLat;
+                var deltaLon = targetLon - ownLon;
+
+                if (deltaLon > 180) {
+                    deltaLon -= 360;
+                } elsif (deltaLon < -180) {
+                    deltaLon += 360;
+                }
+
+                var north = deltaLat * latFactor;
+                var east = deltaLon * lonFactor;
+
+                var up = (targetAlt - ownAlt) / feetPerNM;
+
+                var distanceNM = math.sqrt(
+                    north * north +
+                    east * east +
+                    up * up
+                );
+
+                if (distanceNM > radarRange) continue;
+
+                AA_modelsInRange += 1;
+
+                var bodyF = north * fN + east * fE + up * fU;
+                var bodyR = north * rN + east * rE + up * rU;
+                var bodyU = north * uN + east * uE + up * uU;
+
+
+                var beamF = bodyF * bF[0] +
+                            bodyR * bF[1] +
+                            bodyU * bF[2];
+
+                var beamR = bodyF * bR[0] +
+                            bodyR * bR[1] +
+                            bodyU * bR[2];
+
+                var beamU = bodyF * bU[0] +
+                            bodyR * bU[1] +
+                            bodyU * bU[2];
+
+                if (beamF <= 0) continue;
+
+                var azimuth = math.atan2(beamR, beamF) / d2r;
+                var elevation = math.atan2(beamU, beamF) / d2r;
+
+
+                if (math.abs(azimuth) > AA_FOV_AZ_DEG) continue;
+                if (math.abs(elevation) > AA_FOV_EL_DEG) continue;
+
+                AA_modelsInFOV += 1;
+
+                var col = math.floor(
+                    ((azimuth + AA_FOV_AZ_DEG) /
+                    (2 * AA_FOV_AZ_DEG)) * AA_COLS
+                );
+
+                var row = math.floor(
+                    ((elevation + AA_FOV_EL_DEG) /
+                    (2 * AA_FOV_EL_DEG)) * AA_ROWS
+                );
+
+
+                col = math.max(0, math.min(AA_COLS - 1, col));
+                row = math.max(0, math.min(AA_ROWS - 1, row));
+
+
+                var cell = row * AA_COLS + col;
+
+                if (distanceNM < nearest[cell]) {
+
+                    nearest[cell] = distanceNM;
+
+                    var signal = 15000 * (1.0 - distanceNM / radarRange);
+
+                    nextValues[cell] = math.max(0, signal);
+                }
+
+            }
+        }
+    }
+
+    for (var i = 0; i < AA_ROWS * AA_COLS; i += 1) {
+
+        if (nextValues[i] != AA_PREVIOUS[i]) {
+
+            var row = math.floor(i / AA_COLS);
+            var col = i - row * AA_COLS;
+
+            var path = "/instrumentation/radar/air-to-air/pixels/row[" ~ row ~
+                       "]/col[" ~ col ~ "]/target-distance";
+
+            setprop(path, nextValues[i]);
+
+            AA_PREVIOUS[i] = nextValues[i];
+        }
+    }
+
+    setprop("/instrumentation/radar/air-to-air/debug/models-found",
+            AA_modelsFound);
+
+    setprop("/instrumentation/radar/air-to-air/debug/models-valid",
+            AA_modelsValid);
+
+    setprop("/instrumentation/radar/air-to-air/debug/models-position",
+            AA_modelsPosition);
+
+    setprop("/instrumentation/radar/air-to-air/debug/models-in-range",
+            AA_modelsInRange);
+
+    setprop("/instrumentation/radar/air-to-air/debug/models-in-fov",
+            AA_modelsInFOV);
+
+
+    settimer(AA_update, AA_UPDATE_PERIOD);
+};
+
+var AA_start = func {
+
+    if (AA_RUNNING) return;
+
+    AA_init();
+
+    AA_RUNNING = 1;
+
+    settimer(AA_update, AA_UPDATE_PERIOD);
+};
+
+var AA_stop = func {
+
+    AA_RUNNING = 0;
+};
+
+AA_start();
