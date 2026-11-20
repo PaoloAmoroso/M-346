@@ -185,24 +185,32 @@
 
     <!-- Weapons effects -->
 	
-	<model>
-		<name>flame</name>
-		<path>Aircraft/M-346/Models/Effects/Gun/Flame.xml</path>
-		<condition>
-			<and>
-				<equals>
-					<property>sim/weight[4]/payload-int</property>
-					<value>4</value>
-				</equals>
-				<property>sim/multiplay/generic/int[8]</property>
-			</and>
-    	</condition>
-	</model>
+  <model>
+    <path>Aircraft/M-346/Models/Effects/Gun/Flame.xml</path>
+    <name>GunFlame</name>
+    <offsets>
+      <x-m> -1.3732 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -1.1165 </z-m>
+    </offsets>
+    <condition>
+      <and>
+        <or>
+          <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>Cannon</value>
+          </equals>
+          <property>sim/model/show-Cannon</property>
+        </or>
+        <property>sim/multiplay/generic/int[8]</property>
+      </and>
+    </condition>
+  </model>
 	
   <!-- cannon smoke -->
   <model>
     <path>Aircraft/M-346/Models/Effects/Gun/smoke.xml</path>
-    <name>GSh-23-smoke</name>
+    <name>Gunsmoke</name>
     <offsets>
       <x-m>-1.3732</x-m>
       <y-m>0.0</y-m>
@@ -211,7 +219,7 @@
   </model>
   <animation>
     <type>select</type>
-    <object-name>GSh-23-smoke</object-name>
+    <object-name>Gunsmoke</object-name>
     <condition>
       <and>
         <equals>
@@ -226,7 +234,7 @@
   <!-- MP bullets done by particles -->
   <model>
     <path>Aircraft/M-346/Models/Effects/Gun/MP-bullet.xml</path>
-    <name>GSh-23-MPbullets</name>
+    <name>GunMPbullets</name>
     <offsets>
       <x-m>-1.3732</x-m>
       <y-m>0.0</y-m>
@@ -235,12 +243,12 @@
   </model>
   <animation>
     <type>select</type>
-    <object-name>GSh-23-MPbullets</object-name>
+    <object-name>GunMPbullets</object-name>
     <condition>
       <and>
         <equals>
           <property>sim/weight[4]/payload-int</property>
-          <value>4</value>
+          <value>3</value>
         </equals>
         <property>sim/multiplay/generic/int[8]</property>
         <property>sim/is-MP-Aircraft</property>
